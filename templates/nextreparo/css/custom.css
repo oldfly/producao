@@ -1,0 +1,277 @@
+/* Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+/* ========================================================================
+   Use this file to add custom CSS easily
+ ========================================================================== */
+
+/* Logo size for centered navigation */
+
+@font-face {
+    font-family: "Flaticon";
+    src: url("font/flaticon.eot");
+    src: url("font/flaticon.eot#iefix") format("embedded-opentype"),
+    url("font/flaticon.woff") format("woff"),
+    url("font/flaticon.ttf") format("truetype"),
+    url("font/flaticon.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+    font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}.flaticon-laptop:before {
+    content: "\e000";
+}
+.flaticon-message31:before {
+    content: "\e001";
+}
+.flaticon-shopping122:before {
+    content: "\e002";
+}
+
+
+.tm-navbar-center [class*='tm-logo'] { transform: scale(1.2); }
+
+.uk-block-bg-menu_black{ background-color: #000; color: #fff;}
+.uk-block-bg-menu_black .rky-social-icon-footer{ text-align: center;}
+.uk-block-bg-menu_black .uk-subnav{ display: inline-block;}
+
+.tm-bottom-a .uk-h1,
+.tm-top-c .uk-h1, .tm-top-a .uk-h1{ color:#0072CB; text-transform: uppercase; text-align: center; margin-bottom: 25px}
+.uk-block-primary .tm-bottom-a .uk-h1,
+.uk-block-primary .tm-top-c .uk-h1{ color: #ffffff; }
+.uk-block-primary{ color: rgba(255, 255, 255, 0.59);}
+
+.uk-block-menu1, .uk-block-menu2{ padding: 10px 0}
+.uk-block-menu1 .uk-subnav-line > li a, .uk-block-menu2 .uk-subnav-line > li a{ font-size: 12px; font-weight: 600; color: rgba(255, 255, 255, 0.44);}
+
+.uk-block-menu2 .uk-subnav-line li span{ font-weight: bold; color: #fff}
+.bg-gray{ background-color: #F4F4F4}
+.uk-custon-tutoriais .uk-panel-title{ color:#0072CB}
+.power-by-next4{ float: right;}
+.link-read-more-forum a{  background-color: #333333; color: rgba(255, 255, 255, 0.74);  display: block;  float: right; line-height: 1.2;
+    					  padding: 4px 8px;  position: relative;  top: 10px;
+    					}
+.uk-navbar-brand img{ width: 61%}                        
+
+.link-read-more-forum a:hover{ background-color: #0072CB; text-decoration: none;}
+
+.new-top-a{
+	position: relative;
+	min-height: 550px;
+	background-image: url("../../../images/banners/slide-show-home.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-origin:padding-box;
+}
+.tm-block-top-d .tm-primary-title a {
+  color: #fff;
+}
+.newlogo-top-a{ position: relative; margin: 0 auto}
+
+.new-status{ background-color: rgba(51, 51, 51, 0.72); padding: 25px 0; position: relative; bottom: 0}
+
+
+.new-menu{  background-color: rgba(17, 17, 17, 0.85);   margin-top:50px;  padding: 25px 0;  }
+  
+.new-menu a{ color: #fff; font-size: 14px; font-weight: 500; text-transform: uppercase;}
+.new-menu a i{ margin-right: 5px; font-size: 18px}
+.new-menu a:hover{ text-decoration: none;}
+.new-menu-center ul{ list-style: none;  margin: 0 auto; text-align: center; padding: 0}
+.new-menu-center ul li{ display: inline-block;}
+.new-menu-center .uk-subnav-line > *:nth-child(n+2)::before{ margin: 0 35px}
+.new-menu-center .uk-subnav-line{
+    position: relative;
+    right: 1%
+}
+
+
+#contato input[type='text'],
+#contato textarea, #contato select{ 
+  padding: 10px; border: solid 4px rgba(51, 51, 51, 0.13);  font-size: 16px; text-transform: uppercase; color: rgba(51, 51, 51, 0.62); }
+
+
+
+/*
+ * Circle Chart
+ */
+svg.uk-circlechart {
+  display: block;
+  margin: auto;
+}
+svg.uk-circlechart path {
+  fill: #ffffff;
+}
+svg.uk-circlechart circle {
+  fill: #0072CB;
+}
+svg.uk-circlechart text {
+  font-weight: bold;
+  font-size: 50px;
+  fill: #ffffff;
+  dominant-baseline: central;
+  text-anchor: middle;
+}
+.tm-block-secondary svg.uk-circlechart path {
+  fill: #0bc9eb;
+}
+.tm-block-secondary svg.uk-circlechart circle {
+  fill: #2a3537;
+}
+.tm-block-secondary svg.uk-circlechart text {
+  fill: #0072CB;
+}
+.tm-block-primary svg.uk-circlechart path {
+  fill: #0072CB;
+}
+.tm-block-primary svg.uk-circlechart circle {
+  fill: #0bc9eb;
+}
+.tm-block-primary svg.uk-circlechart text {
+  fill: #0072CB;
+}
+
+.custom-circle-char h3{ text-align: center; color: #52AB9B}
+
+.custom-circle-char h3:after{
+  background-color: #52AB9B;
+    content: "";
+    display: block;
+    height: 2px;
+    margin: 12px auto 0;
+    width: 20%;
+}
+
+.uk-text-white{
+    color:#fff !important;
+}
+
+.box-status{
+  background: transparent;
+  color:#fff;
+  border: none;
+  text-align: center;
+}
+
+.box-status span{
+  font-size: 60px;
+}
+
+.box-status p{
+  line-height: 30px;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
+
+
+.uk-border-bottom:after{
+        
+    margin: 20px auto;
+    text-align: center;
+    content: "";
+    display: block;
+    width: 80px;
+    border-bottom: 5px solid #fff;
+}
+
+.titulo-cat{
+  padding: 5px 20px !important;
+}
+
+
+.repare-s-blog{
+  padding: 20px;
+  
+  background: #ffffff none repeat scroll 0 0;
+    border-radius: 2px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    float: none;
+    margin-bottom: 20px;
+    position: relative
+}
+
+.repare-s-blog .uk-article-title{
+  font-size: 30px; line-height: normal; color: #0072CB;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  text-transform: uppercase;
+}
+.image-into-blog{ margin: 25px auto}
+.outros_tutoriais ul{ padding: 0; margin: 0; list-style: none; }
+.title-autor-topsm{ display: block;}
+.uk-grid-new p{ font-size: 12px; line-height: normal; margin-bottom: auto;}
+.outros_tutoriais li{ border-bottom: 1px solid #ededf0;  padding-top: 10px; }
+.outros_tutoriais li:hover{ background-color: #ededf0}
+.outros_tutoriais .title-autor-topsm a{ font-weight: bold; color: #333; font-size: 16px}
+.outros_tutoriais li img{ border: solid 2px #056AB9}
+
+/*list para progress bar*/
+
+ul.listprogress li{
+      padding-bottom: 20px !important;
+}
+
+ul.listprogress li .uk-progress{
+    margin-top: 5px !important;
+}
+
+.boxlateral .kheader h2{
+  width: 100% !important;
+  display: block !important;
+  clear: both !important;
+}
+
+.boxlateral .kheader{
+  padding-bottom: 20px !important;
+}
+
+/*Estilo do modulo dos modelos das marcas */
+.bloco-padrao-tutorias h3{
+  font-size: 16px; 
+  padding: 0;
+  margin: 0;
+  line-height: normal;
+}
+
+.bloco-padrao-tutorias .uk-panel-box{
+   background: #efefef none repeat scroll 0 0;
+   text-align: center;
+}
+.bloco-padrao-tutorias h3 a{ color:#747474} 
+
+#tm-top-b{ padding: 30px 0; margin-bottom: 0}
+
+.pag_tutoriais .page-header  h2{
+    font-size: 16px;
+    line-height: 1.2;
+  }
+  .image-box img{
+    max-width: 100%;
+    width: 100%;
+  }
+  .rk-margin-tutorial{ margin-bottom: 20px}
+  .image-opacit{ opacity: 0}
+  
+  #Kunena .kicon-button span.layout-mesmoproblema{
+  background-color: #009FE8 !important;
+  color:#fff;
+ }
+.bloco-padrao-tutorias .uk-panel-teaser p{  padding: 0 !important; margin: 0 !important}  
+
+small.similar-smallinfo{
+   height: auto;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 0;
+    line-height: 1;
+}
+
+small.similar-smallinfo .countnum{
+  color: #ff0000;
+  font-size: 18px !important;
+}

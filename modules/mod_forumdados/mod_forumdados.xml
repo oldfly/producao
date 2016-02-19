@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>Forum dados</name>
+	<author>André Luiz Pereira</author>
+	<creationDate>Dezembro 2015</creationDate>
+	<copyright>Copyright (C) 2005 - 2015 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>andre@next4.com.br</authorEmail>
+	<authorUrl>www.next4.com.br</authorUrl>
+	<version>3.0.0</version>
+	<description>Pega os dados do Kunema e categoria tutorial</description>
+
+	<files>
+		<filename module="mod_forumdados">mod_forumdados.php</filename>
+		<filename >getHelper.php</filename>
+		<folder>tmpl</folder>
+	</files>
+
+	<help key="JHELP_EXTENSIONS_MODULE_MANAGER_CUSTOM_HTML" />
+	<config>
+		<fields name="params">
+			<fieldset name="options" label="COM_MODULES_BASIC_FIELDSET_LABEL">
+				<field name="datatype" type="list" default="" label="Selecione o tipo" description="Para cada tipo um dado distinto será tirado">
+				  <option value="1">Total de manuais</option>
+				  <option value="2">Total de Soluções</option>
+				  <option value="3">Total de dispositivos</option>
+				  <option value="4">Porcentagem de soluções</option>
+				</field>
+				<field
+					name="aleatorio"
+					type="text"
+					label="Valor aleatório"
+					description="Caso não tenha informação no banco ou a informação não é satisfatória defina o numero desejado." />
+			</fieldset>
+			
+			<fieldset
+				name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

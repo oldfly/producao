@@ -1,0 +1,113 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Subnav
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@subnav-margin-horizontal:                      15px;
+@subnav-margin-vertical:                        round(@subnav-margin-horizontal / 2);
+
+@subnav-color:                                  @global-color;
+@subnav-hover-color:                            @global-primary-color;
+@subnav-active-color:                           @global-highlight-color;
+
+@subnav-line-border-height:                     12px;
+@subnav-line-border:                            fade(@global-muted-color, 30%);
+@subnav-line-border-width:                      1px;
+
+@subnav-pill-padding-vertical:                  5px;
+@subnav-pill-padding-horizontal:                round(@subnav-pill-padding-vertical * 3);
+
+@subnav-pill-color:                             @global-color;
+@subnav-pill-hover-background:                  @global-light-background;
+@subnav-pill-hover-color:                       @global-highlight-color;
+@subnav-pill-active-background:                 @global-primary-background;
+@subnav-pill-active-color:                      @global-contrast-color;
+
+@subnav-disabled-color:                         @global-muted-color;
+
+//
+// New
+//
+
+@subnav-font-family:                            @global-font-family;
+@subnav-font-size:                              13px;
+@subnav-line-height:                            24px;
+@subnav-text-transform:                         @global-text-transform;
+@subnav-letter-spacing:                         @global-letter-spacing;
+
+@subnav-pill-border-radius:                     @global-border-radius;
+@subnav-pill-onclick-background:                @global-primary-background;
+@subnav-pill-onclick-color:                     @global-contrast-color;
+
+
+// Component
+// ========================================================================
+
+//
+// Items
+//
+
+.hook-subnav() {
+    font-family: @subnav-font-family;
+    font-size: @subnav-font-size;
+    line-height: @subnav-line-height;
+    text-transform: @subnav-text-transform;
+    letter-spacing: @subnav-letter-spacing;
+    -webkit-transition: @global-transition;
+    transition: @global-transition;
+}
+
+// Hover
+.hook-subnav-hover() {}
+
+// Active
+.hook-subnav-active() { font-weight: @global-bold-font-weight; }
+
+
+// Modifier: `uk-subnav-line`
+// ========================================================================
+
+.hook-subnav-line-divider() {}
+
+
+// Modifier: `uk-subnav-pill`
+// ========================================================================
+
+.hook-subnav-pill() { border-radius: @subnav-pill-border-radius; }
+
+// Hover
+.hook-subnav-pill-hover() {}
+
+// Active
+.hook-subnav-pill-active() {}
+
+
+// Disabled state
+// ========================================================================
+
+.hook-subnav-disabled() {
+
+    &::after { display: none; }
+
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-subnav-misc() {
+
+    // uk-subnav-pill onclick event
+    .uk-subnav-pill > li > a:active {
+        background: @subnav-pill-onclick-background;
+        box-shadow: inset 2px 2px 6px @global-primary-active-shadow;
+        color: @subnav-pill-onclick-color;
+    }
+
+}

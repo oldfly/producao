@@ -1,0 +1,116 @@
+/*-----------------------------------------------------------------------------------------------
+ * NTS KSliver ( Theme for the Kunena 4.0.x )
+ * Author: Nice Theme Store
+ * @copyright	Copyright (C) Dec 2009 9themestore.com <@email:9themestore@gmail.com>.All rights reserved.
+ * License: GNU General Public License version 2
+-----------------------------------------------------------------------------------------------*/
+
+#Kunena .kbutton:hover,
+#Kunena .kbutton:focus,
+#Kunena .kbutton:active {
+  background: #0072b7;
+  border-color: #0072b7;
+}
+
+/* -------------------------------------------------------
+** KTOP MENU
+----------------------------------------------------------*/
+#Kunena #ktop #ktopmenu ul li.active {
+  border-color: #0072b7;
+}
+
+#Kunena #ktop #ktopmenu ul li.active a {
+  background-image: url(../../images/blue/tab-active.png);
+  border-bottom: 2px solid #0072b7;
+  color: #0072b7;
+}
+
+#Kunena #ktop #ktopmenu li.active a span {
+  color: #0072b7;
+}
+
+#Kunena table.kprofilebox .kbutton {
+  background: #0072b7;
+  border-color: #005e97;
+}
+
+
+/* -------------------------------------------------------
+** KLIST ACTION PAGE
+----------------------------------------------------------*/
+#Kunena .klist-pages-all .kpagination li span {
+  background: #0072b7;
+  border: 1px solid #0072b7;
+}
+
+
+/* -------------------------------------------------------
+** KBLOCK
+----------------------------------------------------------*/
+#Kunena .kblock div.kheader h2,
+#Kunena .kblock div.kheader h3 {
+  border-bottom: 2px solid #0072b7;
+}
+
+#Kunena div#kannouncement div.kactions a {
+	color: #0072b7 !important;
+}
+
+#Kunena div#kannouncement a.kicon-button {
+	background-color: #0072b7 !important;
+	border-color: #005e97 !important;
+}
+
+
+/* --- Button --- */
+#Kunena a.kicon-button:hover,
+#Kunena .klist-actions .kicon-button:hover,
+#Kunena .kmessage-buttons-cover .kicon-button:hover {
+  background: #0072b7;
+  border-color: #0072b7 !important;
+}
+
+
+/* -------------------------------------------------------
+** KBLOCK OVERRIDE
+----------------------------------------------------------*/
+#Kunena .nts-kblock ul.kblocktable li:hover .kblock-inner:before {
+	background: #0072b7;
+}
+
+#Kunena .nts-kblock li:hover .kcol-kcattitle div.kthead-title a {
+	color: #0072b7;
+}
+
+#Kunena div.kpost-thankyou a {
+  background-color: #0072b7;
+}
+
+
+/* -------------------------------------------------------
+** PROFILE PAGE
+----------------------------------------------------------*/
+#Kunena .kheader .kheadbtn .kwho-admin:hover,
+#Kunena .kheader .kheadbtn .kwho-admin:focus,
+#Kunena .kheader .kheadbtn .kwho-admin:active,
+#Kunena .kheader .kheadbtn .kwho-user:hover,
+#Kunena .kheader .kheadbtn .kwho-user:focus,
+#Kunena .kheader .kheadbtn .kwho-user:active {
+  color: #0072b7 !important;
+}
+
+/*--- Profile tabs ---*/
+#Kunena dl.tabs dt:hover {
+  color: #0072b7; 
+}
+
+#Kunena dl.tabs dt.open {
+  color: #0072b7;
+}
+
+#Kunena #userlist-tbody th a:hover,
+#Kunena #userlist-tbody th a:focus,
+#Kunena #userlist-tbody th a:active {
+  color: #0072b7 !important;
+}
+

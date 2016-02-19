@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install>
+<kinstall type="kunena-template" version="2.0">
+	<name>NTS KSliver</name>
+	<creationDate>2015-11-18</creationDate>
+	<version>2.0.6</version>
+	<author>Nice Theme Store</author>
+	<authorEmail>9themestore@gmail.com</authorEmail>
+	<authorUrl>http://www.9themestore.com</authorUrl>
+	<copyright>Nice Theme Store</copyright>
+	<license>GNU/GPL</license>
+	<description>COM_KUNENA_TEMPLATE_NTS_KSLIVER_DESC</description>
+	<thumbnail>template_thumbnail.png</thumbnail>
+</kinstall>

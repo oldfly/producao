@@ -1,0 +1,1036 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+@import "uikit/uikit.less";
+
+
+// ========================================================================
+// Warp theme
+// ========================================================================
+
+
+// Theme variables
+// ========================================================================
+
+//
+// uk-container (content wrapper) widths
+//
+
+@utility-container-max-width:                   980px;
+@utility-container-large-max-width:             1200px;
+
+//
+// Body & Block Backgrounds
+//
+
+@theme-body-background:                         darken(@global-secondary-background, 3%);
+
+//
+// Toolbar
+//
+
+@theme-toolbar-height:                          @global-height-large;
+@theme-toolbar-border:                          @global-border;
+
+//
+// Navbar
+//
+
+@theme-navbar-height:                           100px;
+@theme-navbar-centered-height:                  180px;
+@theme-navbar-background:                       @global-background;
+@theme-navbar-shadow:                           0 1px 2px rgba(0,0,0,0.1);
+@theme-navbar-contrast-color:                   @contrast-color;
+
+//
+// Fullscreen
+//
+
+@theme-navbar-toolbar-height:                   (@theme-navbar-height + @theme-toolbar-height);
+@theme-navbar-centered-toolbar-height:          (@theme-navbar-centered-height + @theme-toolbar-height);
+
+//
+// Footer
+//
+
+@theme-footer-color:                            fade(@global-secondary-color, 30%);
+@theme-footer-link-color:                       @global-link-color;
+@theme-footer-link-hover-color:                 lighten(@global-link-color, 10%);
+@theme-footer-totop-width:                      20px;
+@theme-footer-totop-offset:                     (@theme-footer-totop-width / 2);
+
+//
+// Additional
+//
+
+// tm-panel-icon
+@theme-panel-icon-size:                         32px;
+@theme-panel-icon-size-offset:                  round(@theme-panel-icon-size / 2);
+@theme-panel-icon-border-width:                 80px;
+@theme-panel-icon-border-height:                2px;
+@theme-panel-icon-border:                       @global-border;
+@theme-panel-icon-color:                        @global-primary-color;
+@theme-panel-icon-primary-border:               @block-primary-border;
+@theme-panel-icon-secondary-border:             @block-secondary-border;
+
+// tm-panel-large-padding
+@theme-panel-large-padding:                     60px;
+
+// tm-panel-medium-padding
+@theme-panel-medium-padding:                    round(@theme-panel-large-padding / 2);
+
+// tm-panel-box-header
+@theme-panel-box-header-border-size:            @panel-header-border-size;
+@theme-panel-box-header-border-width:           @panel-header-border-width;
+@theme-panel-box-header-border:                 @global-primary-background;
+
+// tm-subnav-large + tm-subnav-medium
+@theme-subnav-border-height:                    2px;
+
+
+// Theme Layout
+// ==========================================================================
+
+html { overflow-y: scroll; }
+
+body { background: @theme-body-background; }
+
+// Document height for desktop devices
+.uk-notouch body { min-height: 100vh; }
+
+//
+// Blocks & Container
+//
+
+// Image opacity (Warp Option)
+[class*='tm-block-image-opacity-'] {
+
+    position: relative;
+
+    // Image opacity overlay
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: @global-background;
+        z-index: 1;
+    }
+
+    &.uk-block-muted::after { background: @global-light-background; }
+    &.uk-block-primary::after { background: @global-primary-background; }
+    &.uk-block-secondary::after { background: @global-secondary-background; }
+
+    // Putting the container above the opacity background
+    > .uk-container {
+        position: relative;
+        z-index: 2;
+    }
+
+}
+// Opacity values
+.tm-block-image-opacity-90::after { opacity: 0.1; }
+.tm-block-image-opacity-70::after { opacity: 0.3; }
+.tm-block-image-opacity-50::after { opacity: 0.5; }
+.tm-block-image-opacity-30::after { opacity: 0.7; }
+.tm-block-image-opacity-10::after { opacity: 0.9; }
+
+// Image blend mode (Warp Option) (does not work in any Internet Explorer release yet)
+.tm-block-image-blend-multiply { background-blend-mode: multiply; }
+.tm-block-image-blend-screen { background-blend-mode: screen; }
+.tm-block-image-blend-overlay { background-blend-mode: overlay; }
+.tm-block-image-blend-darken { background-blend-mode: darken; }
+.tm-block-image-blend-lighten { background-blend-mode: lighten; }
+.tm-block-image-blend-color-dodge { background-blend-mode: color-dodge; }
+.tm-block-image-blend-color-burn { background-blend-mode: color-burn; }
+.tm-block-image-blend-hard-light { background-blend-mode: hard-light; }
+.tm-block-image-blend-soft-light { background-blend-mode: soft-light; }
+.tm-block-image-blend-difference { background-blend-mode: difference; }
+.tm-block-image-blend-exclusion { background-blend-mode: exclusion; }
+.tm-block-image-blend-hue { background-blend-mode: hue; }
+.tm-block-image-blend-saturation { background-blend-mode: saturation; }
+.tm-block-image-blend-color { background-blend-mode: color; }
+.tm-block-image-blend-luminosity { background-blend-mode: luminosity; }
+
+// No Padding (Warp Option)
+.tm-block-collapse { padding: 0; }
+
+// Full-width (Warp Option)
+.tm-block-fullwidth {
+
+    // Removing the padding (ignoring the padding settings for the block)
+    padding: 0;
+
+    // Setting the width to 100%
+    > .uk-container  {
+        max-width: 100%;
+        padding: 0;
+    }
+
+}
+
+// Full-height (Warp Option)
+@media (min-width: @breakpoint-medium) {
+
+    // Full Height with centered content (Warp Option)
+    .tm-block-fullheight {
+
+        padding: 0;
+
+        > .uk-container {
+            height: 100vh;
+            .uk-flex;
+            .uk-flex-middle;
+            .uk-flex-center;
+        }
+
+    }
+
+    // Default navbar
+    .tm-navbar + .tm-block-fullheight > .uk-container,
+    .tm-navbar + .tm-block-fullheight > .uk-container .uk-slideshow-fullscreen,
+    .tm-navbar + .tm-block-fullheight > .uk-container .uk-slideshow-fullscreen > li { height: ~'calc(100vh - @{theme-navbar-height})'; }
+
+    // Default navbar + toolbar
+    .tm-block-toolbar + .tm-navbar + .tm-block-fullheight > .uk-container,
+    .tm-block-toolbar + .tm-navbar + .tm-block-fullheight > .uk-container .uk-slideshow-fullscreen,
+    .tm-block-toolbar + .tm-navbar + .tm-block-fullheight > .uk-container .uk-slideshow-fullscreen > li { height: ~'calc(100vh - @{theme-navbar-toolbar-height})'; }
+
+    // Default navbar sticky -> tm-block-fullheight gets an offset
+    .uk-sticky-placeholder + .tm-block-fullheight { margin-top: -@theme-navbar-height; }
+    // Default navbar sticky -> tm-block-fullheight gets a padding whe not collapsed option is disabled
+    .uk-sticky-placeholder + .tm-block-fullheight:not(.tm-grid-collapse) > .uk-container { padding-top: @theme-navbar-height; }
+
+    // Centered navbar
+    .tm-navbar-center .tm-navbar + .tm-block-fullheight > .uk-container,
+    .tm-navbar-center .tm-navbar + .tm-block-fullheight > .uk-container .uk-slideshow-fullscreen,
+    .tm-navbar-center .tm-navbar + .tm-block-fullheight > .uk-container .uk-slideshow-fullscreen > li { height: ~'calc(100vh - @{theme-navbar-centered-height})'; }
+
+    // Centered navbar + toolbar
+    .tm-navbar-center .tm-block-toolbar + .tm-navbar + .tm-block-fullheight > .uk-container,
+    .tm-navbar-center .tm-block-toolbar + .tm-navbar + .tm-block-fullheight > .uk-container .uk-slideshow-fullscreen,
+    .tm-navbar-center .tm-block-toolbar + .tm-navbar + .tm-block-fullheight > .uk-container .uk-slideshow-fullscreen > li { height: ~'calc(100vh - @{theme-navbar-centered-toolbar-height})'; }
+
+    // Centered navbar sticky -> tm-block-fullheight gets an offset
+    .tm-navbar-center .uk-sticky-placeholder + .tm-block-fullheight { margin-top: -@theme-navbar-centered-height; }
+    // Centered navbar sticky -> tm-block-fullheight gets a padding whe not collapsed option is disabled
+    .tm-navbar-center .uk-sticky-placeholder + .tm-block-fullheight:not(.tm-grid-collapse) > .uk-container{ padding-top: @theme-navbar-centered-height; }
+
+    // Navbar (default and center) sticky + toolbar
+    .tm-block-toolbar + .uk-sticky-placeholder + .tm-block-fullheight > .uk-container,
+    .tm-block-toolbar + .uk-sticky-placeholder + .tm-block-fullheight > .uk-container .uk-slideshow-fullscreen,
+    .tm-block-toolbar + .uk-sticky-placeholder + .tm-block-fullheight > .uk-container .uk-slideshow-fullscreen > li { height: ~'calc(100vh - @{theme-toolbar-height})'; }
+
+}
+
+// Min-height for smaller devices
+@media (max-width: @breakpoint-small-max) {
+
+    .tm-block-fullheight > .uk-container,
+    .tm-block-fullheight > .uk-container .uk-slideshow-fullscreen,
+    .tm-block-fullheight > .uk-container .uk-slideshow-fullscreen > li {
+        height: 100%;
+        min-height: 600px;
+    }
+
+}
+
+// Grid collapse (removing the grid gutter) (Warp Option)
+.tm-grid-collapse > .uk-container {
+
+    // Removing 1 pixel bug
+    &::before,
+    &::after { display: none; }
+
+    // Removing the gutter
+    > .uk-grid {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    // Resetting the gutter and removing the Javascript margin
+    > .uk-grid > * {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-left: 0;
+    }
+
+}
+
+//
+// Toolbar
+//
+
+.tm-block-toolbar {
+
+    position: relative;
+    z-index: 2;
+    background-color: @theme-navbar-background;
+    border-bottom: @global-border-width solid @theme-toolbar-border;
+
+    // Content layout
+    .tm-toolbar-container {
+        min-height: @theme-toolbar-height;
+        .uk-flex;
+        .uk-flex-middle;
+        .uk-flex-space-between;
+    }
+
+}
+
+//
+// Navbar & Logo
+//
+
+// Sticky Logo
+.tm-logo .tm-logo-sticky { display: none; }
+
+// Sticky logo when header-offeset is enabled
+.tm-navbar-transparent .tm-logo {
+
+    .tm-logo-sticky { display: block; }
+
+    img:not(.tm-logo-sticky) { display: none; }
+
+}
+
+// Navbar (default)
+.tm-navbar {
+
+    position: relative;
+    z-index: 2;
+    background-color: @theme-navbar-background;
+    box-shadow: @theme-navbar-shadow;
+
+    // Container
+    .tm-navbar-container {
+        .uk-flex;
+        .uk-flex-middle;
+        .uk-flex-space-between;
+    }
+
+}
+
+// Mobile navbar
+@media (max-width: @breakpoint-small-max) {
+
+    .tm-navbar {
+
+        padding: @global-grid-gutter-small 0;
+
+        // Mobile logo position
+        .uk-navbar-center { max-width: 100%; }
+
+        // Mobile navbar logo position
+        .uk-navbar-content { padding: 0; }
+
+    }
+
+}
+
+// Mobile toggle icon for the offcanvas menu
+.uk-navbar-toggle {
+    position: relative;
+    margin-left: -@global-grid-gutter-small;
+    padding: 0 0 0 @global-grid-gutter-small;
+    z-index: 8;
+}
+
+// Transparent background
+@media (min-width: @breakpoint-medium) {
+
+    .tm-navbar-transparent {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .tm-navbar-transparent .uk-navbar { background: none; }
+
+    // Contrast color
+    .tm-navbar-contrast {
+
+        .uk-navbar { color: @theme-navbar-contrast-color; }
+
+        // Nav
+        .uk-navbar-nav > li > a { color: fade(@theme-navbar-contrast-color, 70%); }
+
+        .uk-navbar-nav > li > a::after { background: @theme-navbar-contrast-color; }
+
+        .uk-navbar-nav > li:hover > a,
+        .uk-navbar-nav > li > a:focus,
+        .uk-navbar-nav > li.uk-open > a { color: @theme-navbar-contrast-color; }
+
+        .uk-navbar-nav > li > a:active { color: @theme-navbar-contrast-color; }
+
+        .uk-navbar-nav > li.uk-active > a { color: @theme-navbar-contrast-color; }
+
+        // Link
+        .uk-navbar-content > a:not([class]) { color: fade(@theme-navbar-contrast-color, 70%); }
+        .uk-navbar-content > a:not([class]):hover { color: @theme-navbar-contrast-color; }
+
+        // Brand
+        .uk-navbar-brand { color: fade(@theme-navbar-contrast-color, 70%); }
+
+        .uk-navbar-brand:hover,
+        .uk-navbar-brand:focus { color: @theme-navbar-contrast-color; }
+
+        // Toggle
+        .uk-navbar-toggle { color: fade(@theme-navbar-contrast-color, 70%); }
+
+        .uk-navbar-toggle:hover,
+        .uk-navbar-toggle:focus { color: @theme-navbar-contrast-color; }
+
+    }
+
+}
+
+// Navbar center (Warp Option)
+.tm-navbar-center {
+
+    .tm-navbar-container {
+        .uk-flex;
+        .uk-flex-center;
+        .uk-flex-column;
+    }
+
+    // Navigation + Logo
+    .tm-nav-logo,
+    .tm-nav {
+        .uk-flex;
+        .uk-flex-center;
+    }
+
+    // Top space to the logo
+    .tm-nav { margin-top: @global-margin; }
+
+}
+
+// Navbar heights
+@media (min-width: @breakpoint-medium) {
+
+    // Default Height
+    .tm-navbar-container {
+        box-sizing: border-box;
+        height: @theme-navbar-height;
+    }
+
+    // Centered height
+    .tm-navbar-center .tm-navbar-container { height: @theme-navbar-centered-height; }
+
+}
+
+//
+// Main
+//
+
+// Adding margin to main-top and main-bottom container
+.tm-main > :nth-child(n+2) { margin-top: @global-grid-gutter; }
+
+// Large Screens
+@media (min-width: @breakpoint-large-max) {
+
+    .tm-main > :nth-child(n+2) { margin-top: @global-grid-gutter-large; }
+
+}
+
+//
+// Footer
+//
+
+.tm-block-footer {
+
+    padding: 20px;
+    background-color: @global-background:
+
+    // Copyright info style
+    .tm-footer {
+
+          position: relative;
+          color: @theme-footer-color;
+          font-size: 14px;
+         
+
+          // Link color
+          a {
+
+              color: @theme-footer-link-color;
+
+              // Hover
+              &:hover { color: @theme-footer-link-hover-color; }
+
+          }
+
+          // To-top scroller
+          .tm-totop-scroller {
+
+              display: block;
+              position: absolute;
+              top: 0;
+              right: 0;
+              z-index: @global-z-index;
+              width: @theme-footer-totop-width;
+              height: @theme-footer-totop-width;
+              line-height: @theme-footer-totop-width;
+              font-size: 13px;
+              color: @theme-footer-color;
+              text-align: center;
+              -webkit-transition: @global-transition;
+              transition: @global-transition;
+
+              &::after {
+                  content: "\f077";
+                  font-family: "FontAwesome";
+              }
+
+              // Onhover + focus event
+              &:hover,
+              &:focus {
+                  color: lighten(@theme-footer-color, 10%);
+                  font-size: 15px;
+                  outline: none; /* 2 */
+                  text-decoration: none;
+              }
+
+              // Onclick event
+              &:active {
+                  color: @global-link-color;
+                  font-size: 13px;
+              }
+
+          }
+
+    }
+
+}
+
+//
+// Search
+//
+
+.tm-search {
+    position: fixed;
+    top: round((@theme-navbar-height / 2) - (@search-height  / 2));
+    right: 0;
+    z-index: 981;
+    border-radius: @global-border-radius 0 0 @global-border-radius;
+    background: @global-light-background;
+}
+
+// Search position when navbar is centered
+.tm-navbar-center .tm-search { top: round((@theme-navbar-centered-height / 2) - (@search-height  / 2)); }
+
+
+// Theme Additions
+// ==========================================================================
+
+//
+// Blog Article
+//
+
+.tm-article-blog {
+
+    // Blog image large (not left or right aligned)
+    .tm-article-image-large { max-height: 400px; }
+
+    // Spacing to each other
+    + .tm-article-blog {
+        margin-top: @global-margin;
+        padding-top: @global-margin;
+    }
+
+}
+
+@media (min-width: @breakpoint-small-max) {
+
+    .tm-article-blog + .tm-article-blog {
+        margin-top: @theme-panel-large-padding;
+        padding-top: @theme-panel-large-padding;
+    }
+
+}
+
+// Adding more space to 'uk-pagination'
+.uk-grid + .uk-pagination { margin-top: @block-padding-vertical-large; }
+
+//
+// Theme list 'tm-list'
+//
+
+.tm-list {
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    .uk-flex;
+    .uk-flex-column;
+
+    // Items
+    > li {
+
+        .uk-flex;
+        .uk-flex-middle;
+        padding: 5px 0;
+        line-height: @global-line-height;
+
+        // Headline
+        h4 {
+            .uk-flex-item-1;
+            margin: 0;
+        }
+
+        // Subitem 'tm-list-badge'
+        .tm-list-badge {
+            display: inline-block;
+            min-width: @global-height-small;
+            margin-right: round(@global-margin / 2);
+            color: @global-muted-color;
+        }
+
+    }
+
+}
+
+//
+// uk-panel modifier 'tm-panel-icon'
+//
+
+.tm-panel-icon.uk-text-center {
+
+    > h3 {
+
+        position: relative;
+        padding-top: (@theme-panel-icon-size + 10px);
+
+        // Icon
+        [class*='uk-icon-'] {
+            position: absolute;
+            top: 0;
+            left: ~'calc(50% - @{theme-panel-icon-size-offset})';
+            width: @theme-panel-icon-size;
+            color: @theme-panel-icon-color;
+            font-size: @theme-panel-icon-size;
+        }
+
+        // Border
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: round(@theme-panel-icon-size / 2);
+            width: @theme-panel-icon-border-width;
+            height: @theme-panel-icon-border-height;
+            background: @theme-panel-icon-border;
+        }
+
+        &::before { right: ~'calc(50% + @{theme-panel-icon-size})'; }
+        &::after { left: ~'calc(50% + @{theme-panel-icon-size})'; }
+
+    }
+
+}
+
+// Icon color for 'uk-block-primary'
+.uk-block-primary .tm-panel-icon.uk-text-center > h3 [class*='uk-icon-'] { color: @contrast-color; }
+
+// Icon color for 'uk-block-primary'
+.uk-block-secondary .tm-panel-icon.uk-text-center > h3 [class*='uk-icon-'] { color: @global-secondary-highlight-color; }
+
+// Background color for 'tm-panel-icon' border on 'uk-block-primary'
+.uk-block-primary .tm-panel-icon.uk-text-center > h3::before,
+.uk-block-primary .tm-panel-icon.uk-text-center > h3::after { background: @theme-panel-icon-primary-border; }
+
+// Background color for 'tm-panel-icon' border on 'uk-block-secondary'
+.uk-block-secondary .tm-panel-icon.uk-text-center > h3::before,
+.uk-block-secondary .tm-panel-icon.uk-text-center > h3::after { background: @theme-panel-icon-secondary-border; }
+
+@media (max-width: @breakpoint-small-max) {
+
+    // Title text truncate for small devices
+    .tm-panel-icon.uk-text-center > h3 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+}
+
+
+//
+// uk-panel modifier 'tm-panel-large-padding'
+//
+
+.tm-panel-large-padding { padding: @panel-box-padding; }
+
+@media (min-width: @breakpoint-small-max) {
+
+    .tm-panel-large-padding { padding: @theme-panel-large-padding; }
+
+}
+
+//
+// uk-panel modifier 'tm-panel-medium-padding'
+//
+
+.tm-panel-medium-padding { padding: @panel-box-padding; }
+
+@media (min-width: @breakpoint-small-max) {
+
+    .tm-panel-medium-padding { padding: @theme-panel-medium-padding; }
+
+}
+
+//
+// uk-panel-box modifier for uk-panel-title 'tm-panel-box-header'
+//
+
+.tm-panel-box-header .uk-panel-title {
+
+    position: relative;
+    padding-bottom: 20px;
+    border: none;
+
+    // Border
+    &::after {
+        display: block;
+        width: @theme-panel-box-header-border-size;
+        content: '';
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        border-bottom: @theme-panel-box-header-border-width solid @theme-panel-box-header-border;
+    }
+
+}
+
+// uk-panel-box-header with uk-text-center
+.tm-panel-box-header.uk-text-center .uk-panel-title::after,
+.tm-panel-box-header .uk-text-center .uk-panel-title::after { margin: 0 auto; }
+
+
+//
+// uk-subnav modifier 'tm-subnav-large'
+//
+
+.tm-subnav-large {
+
+    // Item style
+    .uk-subnav > * { padding-left: round(@subnav-margin-horizontal * 2); }
+    .uk-subnav > li > * {
+        font-size: 22px;
+        line-height: 28px;
+        text-transform: none;
+        letter-spacing: 0;
+    }
+
+    // Spacing when block elements follows on uk-subnav
+    .uk-subnav + div,
+    .uk-subnav + ul {
+        margin-top: (@global-grid-gutter-large * 2) !important;
+        margin-bottom: @global-grid-gutter-large !important;
+    }
+
+}
+
+//
+// uk-subnav modifier 'tm-subnav-medium'
+//
+
+.tm-subnav-medium {
+
+    // Item style
+    .uk-subnav > * { padding-left: round(@subnav-margin-horizontal * 1.4); }
+    .uk-subnav > li > * {
+        font-size: 16px;
+        line-height: 24px;
+        text-transform: none;
+        letter-spacing: 0;
+    }
+
+    // Spacing top when block elements follows on uk-subnav
+    .uk-subnav + div,
+    .uk-subnav + ul { margin-top: @global-grid-gutter-large !important; }
+
+}
+
+//
+// Hover border line for uk-subnav modifiers 'tm-subnav-large' and 'tm-subnav-medium' items
+//
+
+.tm-subnav-large,
+.tm-subnav-medium {
+
+    .uk-subnav > li > * {
+
+        position: relative;
+        padding-bottom: 6px;
+        -webkit-transition: @global-transition;
+        transition: @global-transition;
+
+        // Hover line
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            height: 1px;
+            background: @global-primary-color;
+            opacity: 0;
+            -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+            transition: height 0.3s, opacity 0.3s, transform 0.3s;
+            -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+            -webkit-transform: translate3d(0,0,0); // Safari flickering fix
+        }
+
+    }
+
+    // Hover, Active
+    .uk-subnav > li > *:hover::after,
+    .uk-subnav > li.uk-active > *::after {
+        height: @theme-subnav-border-height;
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        -webkit-transform: translate3d(0,0,0); // Safari flickering fix
+    }
+
+    // Onclick
+    .uk-subnav > li > *:active::after {
+        height: 1px;
+        opacity: 0;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+        -webkit-transform: translate3d(0,0,0); // Safari flickering fix
+    }
+
+}
+
+//
+// uk-text tweakings
+//
+
+// smaller margin-top  when 'uk-text-large' follows on a h1 class
+.uk-h1 + p.uk-text-large,
+.uk-article-title + p.uk-text-large { margin-top: 0; }
+
+// larger margin-top when an html element follows directly on 'uk-text-large'
+.uk-text-large + *,
+.uk-block-large .uk-text-large + * { margin-top: round(@global-grid-gutter-large * 1.2); }
+
+// 'tm-text-small' modifier
+.tm-text-small {
+    font-size: 12px !important;
+    line-height: 12px !important;
+    font-weight: @global-font-weight !important;
+}
+
+//
+// Multiple text columns 'tm-article-columns'
+//
+
+// Desktop and bigger
+@media (min-width: @breakpoint-large) {
+
+    .tm-article-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+        -webkit-column-gap: @global-grid-gutter;
+        -moz-column-gap: @global-grid-gutter;
+        column-gap: @global-grid-gutter;
+    }
+
+}
+
+// Only desktop
+@media (max-width: @breakpoint-large) {
+
+    :not(.uk-width-medium-1-1):not(.uk-width-1-1) > .uk-article .tm-article-columns {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+
+}
+
+//
+// Hide / Show page title for WordPress (Warp Option)
+//
+
+.tm-page-title-false .tm-content > .uk-article > .uk-article-title { display: none; }
+
+
+// Widgetkit Customizations
+// ==========================================================================
+
+// adding space when 'uk-subnav' follows on 'uk-grid-width' within a widget
+.uk-subnav + [class*='uk-grid-width-'] { margin-top: @global-grid-gutter-large; }
+
+// h4 margin in 'uk-panel-box uk-panel-teaser'
+[class*='uk-grid-width-'] .uk-panel-box > .uk-panel-teaser + .uk-h4 { margin-top: 0; }
+
+//
+// Fullscreen Slideshow modifier 'tm-slideshow-fullscreen'
+//
+
+.tm-slideshow-fullscreen {
+
+    // Image opacity
+    .uk-cover-background { opacity: 0.5; }
+
+    // Title style
+    .uk-overlay-panel > div > h3 {
+        display: inline-block;
+        margin-bottom: 0;
+        padding: 4px 10px;
+        border-radius: @global-border-radius;
+        background: @global-contrast-color;
+        color: @global-secondary-background;
+        text-transform: @global-text-transform;
+        letter-spacing: @global-letter-spacing;
+    }
+
+    // Dotnav position whitespace
+    .uk-overlay-bottom { padding: @global-grid-gutter-large 0; }
+
+}
+
+@media (max-width: @breakpoint-small-max) {
+
+    // Overlay title font size on small viewports
+    .tm-slideshow-fullscreen .uk-overlay-panel > div > h3 {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+}
+
+
+//
+// Video slideshow overlay secondary background 'tm-slideshow-secondary'
+//
+
+.tm-slideshow-secondary .uk-overlay-background { background: fade(@global-secondary-background, 90%); }
+
+//
+// Grid layout 'tm-special-grid'
+//
+
+.tm-special-grid {
+
+    // uk-panel modifier 'tm-panel-light'
+    .tm-panel-light {
+
+        background: @global-light-background;
+
+        .uk-panel-title { color: @global-primary-color; }
+
+    }
+
+    // uk-panel modifier 'tm-panel-dark'
+    .tm-panel-dark {
+
+        background: @global-dark-background;
+
+        .uk-panel-title { color: @global-primary-color; }
+
+    }
+
+    // Grid & Panel layout
+    .uk-grid-collapse > [class*='uk-width-medium-'] > .uk-panel,
+    [class*='uk-width-large-1-'] > .uk-panel > .uk-grid-collapse > div > .uk-panel {
+        box-sizing: border-box;
+        padding: 40px;
+    }
+
+    // uk-panel-teaser offset and spacing
+    [class*='uk-width-large-1-'] > .uk-panel > .uk-grid-collapse > div > .uk-panel > .uk-panel-teaser { margin: -40px -40px 40px -40px; }
+
+    // uk-panel-title spacing
+    @media (max-width: @breakpoint-medium-max) {
+
+        .uk-panel-title { margin-top: @global-margin; }
+
+    }
+
+}
+
+
+// Misc
+// ==========================================================================
+
+//
+// Error
+//
+
+.tm-error-icon { font-size: 250px; }
+
+.tm-error-headline { font-size: 100px; }
+
+//
+// Offline
+//
+
+.tm-offline { width: 300px; }
+
+//
+// Social Buttons
+//
+
+.tm-socialbuttons {
+
+    line-height: 1;
+
+    > div {
+        margin-right: 10px;
+        float: left;
+    }
+}
+
+//
+// WordPress
+//
+
+.alignleft {
+    display: block;
+    margin-right: @utility-align-horizontal;
+    float: left;
+}
+
+.alignright {
+    display: block;
+    margin-left: @utility-align-horizontal;
+    float: right;
+}
+
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+// Style modifications
+// ==========================================================================
+
+.body-style ();
+
+// Steakhouse Style
+.body-style () when (@global-style = 'steakhouse') {
+
+    // Adding uikit contrast component to toolbar
+    .tm-block-toolbar:extend(.uk-contrast all){};
+
+}
+
+// Steakhouse Style
+.body-style () when (@global-style = 'bakery') {
+
+    // Modifying 'uk-text-large' color on 'uk-block-secondary'
+    .uk-block-secondary p.uk-text-large { color: @global-secondary-color; }
+
+}

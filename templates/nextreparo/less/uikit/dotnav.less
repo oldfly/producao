@@ -1,0 +1,64 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Dotnav
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@dotnav-margin-horizontal:                      8px;
+@dotnav-width:                                  16px;
+@dotnav-height:                                 @dotnav-width;
+
+@dotnav-background:                             fade(@global-secondary-background, 25%);
+@dotnav-hover-background:                       @global-secondary-background;
+@dotnav-onclick-background:                     @global-secondary-background;
+@dotnav-active-background:                      @global-secondary-background;
+
+@dotnav-contrast-background:                    fade(@global-contrast-color, 50%);
+@dotnav-contrast-hover-background:              @global-contrast-color;
+@dotnav-contrast-onclick-background:            @global-contrast-color;
+@dotnav-contrast-active-background:             @dotnav-contrast-onclick-background;
+
+
+// Component
+// ========================================================================
+
+.hook-dotnav-item() {
+    -webkit-transition: @global-transition;
+    transition: @global-transition;
+    -webkit-transform: @global-transform;
+    transform: @global-transform;
+}
+
+.hook-dotnav-item-hover() {
+    -webkit-transform: @global-hover-transform;
+    transform: @global-hover-transform;
+}
+
+.hook-dotnav-item-onclick() {
+    -webkit-transform: @global-active-transform;
+    transform: @global-active-transform;
+}
+
+.hook-dotnav-item-active() {
+    -webkit-transform: @global-active-transform;
+    transform: @global-active-transform;
+}
+
+.hook-dotnav-contrast-item() {}
+
+.hook-dotnav-contrast-item-hover() {}
+
+.hook-dotnav-contrast-item-onclick() {}
+
+.hook-dotnav-contrast-item-active() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-dotnav-misc() {}

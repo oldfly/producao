@@ -1,0 +1,79 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Thumbnail
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@thumbnail-padding:                             5px;
+@thumbnail-border-width:                        1px;
+@thumbnail-border:                              @global-border;
+@thumbnail-background:                          @global-light-background;
+@thumbnail-hover-border:                        @thumbnail-border;
+@thumbnail-hover-background:                    @global-dark-background;
+
+@thumbnail-caption-color:                       @global-color;
+
+//
+// New
+//
+
+@thumbnail-border-radius:                       @global-border-radius;
+
+@thumbnail-active-border:                       @global-border;
+@thumbnail-active-background:                   @global-contrast-color;
+@thumbnail-active-color:                        @global-highlight-color;
+
+@thumbnail-caption-font-size:                   13px;
+@thumbnail-caption-text-transform:              @global-text-transform;
+@thumbnail-caption-letter-spacing:              @global-letter-spacing;
+
+
+// Component
+// ========================================================================
+
+.hook-thumbnail() {
+    border-radius: @thumbnail-border-radius;
+    box-shadow: @global-shadow;
+    -webkit-transition: @global-transition;
+    transition: @global-transition;
+}
+
+.hook-thumbnail-hover() { box-shadow: @global-hover-shadow; }
+
+
+// Caption
+// ========================================================================
+
+.hook-thumbnail-caption() {
+    font-size: @thumbnail-caption-font-size;
+    text-transform: @thumbnail-caption-text-transform;
+    letter-spacing: @thumbnail-caption-letter-spacing;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-thumbnail-misc() {
+
+    // onclick event
+    a.uk-thumbnail {
+
+        &:active {
+
+            border-color: @thumbnail-active-border;
+            background: @thumbnail-active-background;
+            color: @thumbnail-active-color;
+
+            .uk-thumbnail-caption { color: @thumbnail-active-color; }
+
+        }
+
+    }
+
+}

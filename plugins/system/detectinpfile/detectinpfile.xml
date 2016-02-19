@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="system" method="upgrade">
+	<name>System - Detectinpfile</name>
+	<author>André Luiz Pereira</author>
+	<creationDate>Outubro 2015</creationDate>
+	<copyright>Copyright (C) 2015. All rights reserved.</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>and4563@gmail.com</authorEmail>
+	<authorUrl>www.next4.com.br</authorUrl>
+	<version>1.0</version>
+	<description>PLG_SYSTEM_DETECTINPFILE_DESC</description>
+<files>
+<filename plugin="detectinpfile">detectinpfile.php</filename>
+<filename>index.html</filename>
+</files>
+
+<languages folder="language">
+                <language tag="pt-BR">pt-BR/pt-BR.plg_system_detectinpfile.ini</language>
+                <language tag="pt-BR">pt-BR/pt-BR.plg_system_detectinpfile.sys.ini</language>
+                <language tag="en-GB">en-GB/en-GB.plg_system_detectinpfile.ini</language>
+                <language tag="en-GB">en-GB/en-GB.plg_system_detectinpfile.sys.ini</language>
+</languages>
+<config>
+        <fields name="params">
+
+        <fieldset name="basic">
+                <field name="detectinpfile_titulo" type="spacer"
+                        label="PLG_SYSTEM_DETECTINPFILE_TITULO"
+                />
+
+                <field name="detectinpfile_check_in_adm" type="radio" default="0" label="PLG_SYSTEM_DETECTINPFILE_RADIO_LABEL" description="PLG_SYSTEM_DETECTINPFILE_RADIO_DESC">
+				  <option value="0">PLG_SYSTEM_DETECTINPFILE_NAO</option>
+				  <option value="1">PLG_SYSTEM_DETECTINPFILE_SIM</option>
+				</field>
+		</fieldset>
+
+     </fields>
+</config>
+</extension>

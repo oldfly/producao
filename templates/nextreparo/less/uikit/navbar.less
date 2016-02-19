@@ -1,0 +1,143 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Navbar
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@navbar-nav-padding-horizontal:                 10px;
+
+@navbar-background:                             @global-background;
+@navbar-color:                                  @global-color;
+@navbar-link-color:                             @global-link-color;
+@navbar-link-hover-color:                       @global-link-hover-color;
+
+@navbar-nav-height:                             40px;
+@navbar-nav-line-height:                        @navbar-nav-height;
+@navbar-nav-font-size:                          14px;
+@navbar-nav-font-weight:                        @global-font-weight;
+@navbar-nav-font-family:                        @global-font-family;
+@navbar-nav-color:                              @global-color;
+@navbar-nav-hover-background:                   rgba(0,0,0,0);
+@navbar-nav-hover-color:                        @global-highlight-color;
+@navbar-nav-onclick-background:                 rgba(0,0,0,0);
+@navbar-nav-onclick-color:                      @global-color;
+@navbar-nav-active-background:                  rgba(0,0,0,0);
+@navbar-nav-active-color:                       @global-primary-color;
+
+@navbar-nav-subtitle-font-size:                 11px;
+@navbar-nav-subtitle-offset:                    2px;
+
+@navbar-brand-font-size:                        24px;
+@navbar-brand-color:                            @global-highlight-color;
+@navbar-brand-hover-color:                      @global-color;
+
+@navbar-toggle-font-size:                       16px;
+@navbar-toggle-color:                           @global-highlight-color;
+@navbar-toggle-hover-color:                     @global-color;
+
+//
+// New
+//
+
+@navbar-brand-text-transform:                   @global-text-transform;
+@navbar-brand-letter-spacing:                   @global-letter-spacing;
+
+@navbar-nav-text-transform:                     @global-text-transform;
+@navbar-nav-letter-spacing:                     @global-letter-spacing;
+
+@navbar-line-color:                             @navbar-nav-active-color;
+
+@navbar-nav-border-height:                      2px;
+
+
+// Component
+// ========================================================================
+
+.hook-navbar() {}
+
+
+// Sub-object: `uk-navbar-nav`
+// ========================================================================
+
+.hook-navbar-nav() {
+
+    position: relative;
+    text-transform: @navbar-nav-text-transform;
+    letter-spacing: @navbar-nav-letter-spacing;
+    -webkit-transition: @global-transition;
+    transition: @global-transition;
+    -webkit-transform: translate3d(0,0,0); // Safari flickering fix
+
+    // Hover line
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        right: @navbar-nav-padding-horizontal;
+        left: @navbar-nav-padding-horizontal;
+        height: 1px;
+        background: @navbar-line-color;
+        opacity: 0;
+        -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+        transition: height 0.3s, opacity 0.3s, transform 0.3s;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+
+    &:hover::after {
+        height: @navbar-nav-border-height;
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+
+    // Onclick
+    &:active::after,
+    &:focus::after {
+        height: 1px;
+        opacity: 0;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+
+}
+
+// Hover
+.hook-navbar-nav-hover() {}
+
+// OnClick
+.hook-navbar-nav-onclick() {}
+
+// Active
+.hook-navbar-nav-active() {}
+
+
+// Sub-object: `uk-navbar-content`
+// ========================================================================
+
+.hook-navbar-content() { margin-top: -1px; }
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-navbar-misc() {
+
+    // Brand
+    .uk-navbar-brand {
+        padding: 0;
+        text-transform: @navbar-brand-text-transform;
+        letter-spacing: @navbar-brand-letter-spacing;
+        -webkit-transition: @global-transition;
+        transition: @global-transition;
+
+        &::before { display: none; }
+
+    }
+
+}

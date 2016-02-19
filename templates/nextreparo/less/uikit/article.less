@@ -1,0 +1,81 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Article
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@article-margin-top:                            @global-margin-large;
+
+@article-title-font-size:                       @global-h1-font-size;
+@article-title-font-weight:                     @global-heading-font-weight;
+@article-title-line-height:                     @global-h1-line-height;
+@article-title-text-transform:                  @global-heading-text-transform;
+
+@article-meta-font-size:                        14px;
+@article-meta-line-height:                      22px;
+@article-meta-color:                            @global-muted-color;
+
+@article-lead-color:                            @global-primary-color;
+@article-lead-font-size:                        24px;
+@article-lead-font-weight:                      @global-font-weight;
+@article-lead-line-height:                      28px;
+
+@article-divider-margin:                        @global-margin-large;
+@article-divider-border:                        @global-border;
+
+//
+// New
+//
+
+@article-border-width:                          @global-border-width;
+@article-border:                                @global-border;
+
+@article-title-letter-spacing:                  0;
+
+@article-meta-text-transform:                   none;
+@article-meta-letter-spacing:                   0;
+
+
+// Sub-object `uk-article-title`
+// ========================================================================
+
+.hook-article-title() { letter-spacing: @article-title-letter-spacing; }
+
+
+// Sub-object `uk-article-meta`
+// ========================================================================
+
+.hook-article-meta() {
+    text-transform: @article-meta-text-transform;
+    letter-spacing: @article-meta-letter-spacing;
+}
+
+
+// Sub-object `uk-article-lead`
+// ========================================================================
+
+.hook-article-lead() {}
+
+
+// Sub-object `uk-article-divider`
+// ========================================================================
+
+.hook-article-divider() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-article-misc() {
+
+    .uk-article + .uk-article {
+        padding-top: @article-margin-top;
+        border-top: @article-border-width solid @article-border;
+    }
+
+}

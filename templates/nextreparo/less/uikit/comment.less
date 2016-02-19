@@ -1,0 +1,113 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Comment
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@comment-header-margin-bottom:                  @global-margin;
+
+@comment-avatar-margin-right:                   @global-margin;
+
+@comment-title-font-size:                       20px;
+@comment-title-line-height:                     26px;
+
+@comment-meta-color:                            @global-muted-color;
+@comment-meta-font-size:                        12px;
+@comment-meta-line-height:                      14px;
+
+@comment-list-margin-top:                       @global-margin;
+
+//
+// New
+//
+
+@comment-padding:                               15px;
+@comment-border-width:                          @global-border-width;
+@comment-border:                                @global-border;
+@comment-border-radius:                         @global-border-radius;
+@comment-background:                            @global-background;
+
+@comment-primary-border:                        @global-primary-background;
+@comment-primary-background:                    fade(@global-primary-background,5%);
+@comment-primary-title-color:                   @global-primary-background;
+
+@comment-meta-text-transform:                   uppercase;
+@comment-meta-letter-spacing:                   1px;
+
+
+// Component
+// ========================================================================
+
+.hook-comment() {}
+
+
+// Sub-object `uk-comment-header`
+// ========================================================================
+
+.hook-comment-header() {
+    padding: @comment-padding;
+    border: @comment-border-width solid @comment-border;
+    border-radius: @comment-border-radius;
+    background: @comment-background;
+    box-shadow: @global-shadow;
+}
+
+
+// Sub-object `uk-comment-avatar`
+// ========================================================================
+
+.hook-comment-avatar() {}
+
+
+// Sub-object `uk-comment-title`
+// ========================================================================
+
+.hook-comment-title() {}
+
+
+// Sub-object `uk-comment-meta`
+// ========================================================================
+
+.hook-comment-meta() {
+    text-transform: @comment-meta-text-transform;
+    letter-spacing: @comment-meta-letter-spacing;
+}
+
+
+// Sub-object `uk-comment-body`
+// ========================================================================
+
+.hook-comment-body() {
+    padding-left: @comment-padding;
+    padding-right: @comment-padding;
+}
+
+
+// Sub-object `uk-comment-primary`
+// ========================================================================
+
+.hook-comment-primary() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-comment-misc() {
+
+    // Comment by administrator
+    .uk-comment-primary .uk-comment-header {
+
+        border-color: @comment-primary-border;
+        background: @comment-primary-background;
+
+        .uk-comment-title,
+        .uk-comment-meta { color: @comment-primary-title-color; }
+
+    }
+
+}

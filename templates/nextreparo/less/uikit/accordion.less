@@ -1,0 +1,141 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Accordion
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@accordion-title-margin-bottom:                 round(@accordion-title-padding-vertical * 2);
+@accordion-title-padding-vertical:              6px;
+@accordion-title-padding-horizontal:            @accordion-title-margin-bottom;
+@accordion-title-font-size:                     @global-h3-font-size;
+@accordion-title-line-height:                   @global-h3-line-height;
+@accordion-title-background:                    rgba(0,0,0,0);
+
+@accordion-content-padding-horizontal:          @accordion-title-padding-horizontal;
+@accordion-content-padding-bottom:              @accordion-title-padding-horizontal;
+
+//
+// New
+//
+
+@accordion-title-text-transform:                none;
+@accordion-title-letter-spacing:                0;
+
+@accordion-title-border-width:                  @global-border-width;
+@accordion-title-border:                        rgba(0,0,0,0);
+@accordion-title-border-radius:                 @global-border-radius;
+
+@accordion-title-hover-background:              @accordion-title-background;
+@accordion-title-hover-border:                  @global-border;
+@accordion-title-hover-color:                   @global-highlight-color;
+
+@accordion-title-onclick-background:            @accordion-title-hover-background;
+@accordion-title-onclick-border:                darken(@accordion-title-hover-border, 10%);
+@accordion-title-onclick-color:                 darken(@accordion-title-hover-color, 10%);
+
+@accordion-title-active-background:             @accordion-title-background;
+@accordion-title-active-border:                 @accordion-title-border;
+@accordion-title-active-color:                  @accordion-title-hover-color;
+
+@accordion-icon-toggle:                         "\f055"; // uk-icon-plus-circle
+@accordion-icon-toggle-active:                  "\f056"; // uk-icon-minus-circle
+@accordion-icon-toggle-size:                    16px;
+@accordion-icon-toggle-offset:                  round(@accordion-icon-toggle-size / 2);
+@accordion-icon-toggle-color:                   @global-muted-color;
+@accordion-icon-toggle-hover-color:             @accordion-title-hover-color;
+@accordion-icon-toggle-active-color:            @accordion-title-active-color;
+
+
+// Component
+// ========================================================================
+
+.hook-accordion() {}
+
+
+// Modifier: `uk-accordion-title`
+// ========================================================================
+
+.hook-accordion-title() {
+
+    position: relative;
+    box-sizing: border-box;
+    border: @accordion-title-border-width solid @accordion-title-border;
+    border-radius: @accordion-title-border-radius;
+    text-transform: @accordion-title-text-transform;
+    letter-spacing: @accordion-title-letter-spacing;
+    -webkit-transition: @global-transition;
+    transition: @global-transition;
+
+    // Icon toggle
+    &::before {
+        content: @accordion-icon-toggle;
+        position: absolute;
+        top: auto;
+        right: @accordion-title-padding-horizontal;
+        width: @accordion-icon-toggle-size;
+        padding: 1px;
+        font-family: 'FontAwesome';
+        font-size: @accordion-icon-toggle-size;
+        color: @accordion-icon-toggle-color;
+        -webkit-transition: @global-transition;
+        transition: @global-transition;
+    }
+
+    // Hover
+    &:hover {
+
+        border-color: @accordion-title-hover-border;
+        background: @accordion-title-hover-background;
+        color: @accordion-title-hover-color;
+
+        // Icon toggle
+        &::before { color: @accordion-icon-toggle-hover-color; }
+
+    }
+
+    // Onclick
+    &:active {
+        border-color: @accordion-title-onclick-border;
+        background: @accordion-title-onclick-background;
+        color: @accordion-title-onclick-color;
+        -webkit-animation: @global-blur-animation;
+        animation: @global-blur-animation;
+
+        // Icon toggle
+        &::before { color: @accordion-icon-toggle-active-color; }
+
+    }
+
+    // Active / Open
+    &.uk-active {
+
+        border-color: @accordion-title-active-border;
+        background: @accordion-title-active-background;
+        color: @accordion-title-active-color;
+
+        // Icon toggle
+        &::before {
+            content: @accordion-icon-toggle-active;
+            color: @accordion-icon-toggle-active-color;
+        }
+
+    }
+
+}
+
+
+// Modifier: `uk-accordion-content`
+// ========================================================================
+
+.hook-accordion-content() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-accordion-misc() {}

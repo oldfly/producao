@@ -1,0 +1,328 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+@import 'https://fonts.googleapis.com/css?family=Raleway:300,500';
+@import 'https://fonts.googleapis.com/css?family=Inconsolata:400,700';
+
+
+// Global variables
+// ========================================================================
+
+//
+// Text
+//
+
+@global-color:                                  #888;
+@global-muted-color:                            #666;
+@global-highlight-color:                        @global-contrast-color;
+
+@global-link-color:                             #e0d28f;
+@global-link-hover-color:                       darken(@global-link-color, 10%);
+
+@global-primary-color:                          @global-link-color;
+@global-primary-link-color:                     #9c4a2a;
+@global-primary-link-hover-color:               fade(@global-primary-link-color, 70%);
+
+@global-secondary-highlight-color:              #ccc;
+
+@global-contrast-color:                         #fff;
+
+@global-success-color:                          #8ebc87;
+@global-warning-color:                          #d0855c;
+@global-danger-color:                           #d05c5c;
+
+//
+// Typography
+//
+
+@global-font-family:                            'Inconsolata', Consolas, monospace, serif;
+@global-alternate-font-family:                  'Raleway', Helvetica, Arial, sans-serif;
+
+@global-font-weight:                            400;
+@global-bold-font-weight:                       700;
+@global-heading-font-weight:                    300;
+@global-text-transform:                         uppercase;
+@global-letter-spacing:                         0;
+
+//
+// Backgrounds & Borders
+//
+
+@global-background:                             #222;
+@global-light-background:                       #292929;
+@global-dark-background:                        #323232;
+@global-secondary-background:                   #191919;
+
+@global-default-background:                     @global-secondary-background;
+@global-default-hover-background:               darken(@global-default-background, 3%);
+@global-default-active-background:              darken(@global-default-hover-background, 2%);
+@global-default-active-shadow:                  fade(darken(@global-default-active-background, 10%), 40%);
+
+@global-primary-background:                     #e0d28f;
+@global-primary-hover-background:               desaturate(darken(@global-primary-background, 3%), 7%);
+@global-primary-active-background:              desaturate(darken(@global-primary-background, 7%), 5%);
+@global-primary-active-shadow:                  fade(desaturate(darken(@global-primary-active-background, 30%), 10%), 15%);
+
+@global-success-background:                     #8ebc87;
+@global-success-hover-background:               desaturate(darken(@global-success-background, 3%), 7%);
+@global-success-active-background:              desaturate(darken(@global-success-background, 7%), 5%);
+@global-success-active-shadow:                  fade(desaturate(darken(@global-success-active-background, 20%), 10%), 15%);
+
+@global-warning-background:                     #d0855c;
+@global-warning-hover-background:               desaturate(darken(@global-warning-background, 3%), 5%);
+@global-warning-active-background:              desaturate(darken(@global-warning-background, 12%), 8%);
+@global-warning-active-shadow:                  fade(desaturate(darken(@global-warning-active-background, 20%), 15%), 20%);
+
+@global-danger-background:                      #d05c5c;
+@global-danger-hover-background:                desaturate(darken(@global-danger-background, 5%), 5%);
+@global-danger-active-background:               desaturate(darken(@global-danger-background, 8%), 8%);
+@global-danger-active-shadow:                   fade(desaturate(darken(@global-danger-active-background, 10%), 15%), 40%);
+
+@global-shadow:                                 0 2px 1px rgba(0,0,0,0.1);
+@global-hover-shadow:                           0 2px 8px rgba(0,0,0,0.15);
+
+@global-border:                                 lighten(@global-background, 3%);
+@global-border-width:                           1px;
+@global-border-radius:                          1px;
+
+//
+// Misc
+//
+
+@global-style:                                  'pub';
+
+
+// Component variables
+// ========================================================================
+
+//
+// Badge
+//
+
+@badge-color:                                   @contrast-color;
+
+@badge-font-size:                               15px;
+@badge-line-height:                             28px;
+
+@badge-notification-font-size:                  13px;
+@badge-notification-line-height:                25px;
+
+@badge-font-family:                             @global-font-family;
+
+//
+// Base
+//
+
+@base-body-font-family:                         @global-font-family;
+@base-heading-font-family:                      @global-alternate-font-family;
+@base-heading-text-transform:                   @global-text-transform;
+@base-alternate-heading-font-family:            @global-alternate-font-family;
+
+@base-ins-background:                           fade(@global-success-background, 15%);
+@base-mark-background:                          fade(@global-warning-background, 15%);
+
+@base-pre-color:                                #777;
+
+//
+// Block
+//
+
+@block-primary-border:                          desaturate(darken(@block-primary-background, 8%), 12%);
+@block-secondary-border:                        desaturate(darken(@block-secondary-background, 4%), 4%);
+
+//
+// Breadcrumb
+//
+
+@breadcrumb-divider:                            "»";
+
+//
+// Button
+//
+
+@button-font-family:                            @global-font-family;
+@button-font-size:                              14px;
+@button-text-transform:                         @global-text-transform;
+
+@button-primary-color:                          @contrast-color;
+
+//
+// Comment
+//
+
+@comment-border:                                @comment-background;
+@comment-background:                            @global-dark-background;
+@comment-primary-border:                        @global-primary-background;
+@comment-primary-background:                    @global-primary-background;
+@comment-primary-title-color:                   @contrast-color;
+
+//
+// Contrast
+//
+@contrast-color:                                @global-background;
+@contrast-inverted-color:                       @global-background;
+
+//
+// Dotnav
+//
+
+@dotnav-background:                             fade(@global-contrast-color, 15%);
+@dotnav-hover-background:                       fade(@global-contrast-color, 50%);
+@dotnav-onclick-background:                     @global-contrast-color;
+@dotnav-active-background:                      @dotnav-onclick-background;
+
+//
+// Dropdown
+//
+
+@dropdown-navbar-background:                    @global-light-background;
+@dropdown-shadow:                               @global-hover-shadow;
+
+//
+// Form
+//
+
+@form-focus-border:                             @global-dark-background;
+@form-focus-background:                         @form-focus-border;
+@form-focus-shadow:                             inset 0 0 0 rgba(0,0,0,0);
+
+@form-autofill-border:                          @global-dark-background;
+
+//
+// Icon
+//
+
+@icon-button-hover-color:                       @global-primary-color;
+@icon-button-active-color:                      @contrast-color;
+
+//
+// Modal
+//
+
+@modal-border:                                  darken(@modal-header-background, 2%);
+
+//
+// Nav
+//
+
+@nav-font-family:                               @global-font-family;
+
+@nav-side-active-color:                         @contrast-color;
+@nav-dropdown-hover-color:                      @contrast-color;
+
+@nav-offcanvas-background:                      lighten(@offcanvas-bar-background, 4%);
+@nav-offcanvas-color:                           @global-muted-color;
+@nav-offcanvas-hover-background:                lighten(@offcanvas-bar-background, 6%);
+@nav-offcanvas-active-color:                    @contrast-color;
+@nav-offcanvas-nested-color:                    @global-muted-color;
+@nav-offcanvas-nested-hover-color:              @global-color;
+
+//
+// Navbar
+//
+
+@navbar-background:                             @global-secondary-background;
+@navbar-nav-font-family:                        @global-font-family;
+@navbar-nav-font-size:                          @global-font-size;
+@navbar-nav-border-height:                      1px;
+
+//
+// Notify
+//
+
+@notify-message-primary-color:                  @contrast-color;
+
+//
+// Offcanvas
+//
+
+@offcanvas-panel-link-color:                    lighten(@offcanvas-panel-color, 30%);
+@offcanvas-panel-link-hover-color:              @global-contrast-color;
+
+//
+// Pagination
+//
+
+@pagination-onclick-color:                      @contrast-color;
+
+//
+// Panel
+//
+
+@panel-box-background:                          @global-dark-background;
+
+@panel-box-primary-color:                       fade(@global-background, 70%);
+@panel-box-primary-title-color:                 @contrast-color;
+
+@panel-box-hover-background:                    lighten(@panel-box-background, 2%);
+@panel-box-primary-hover-background:            lighten(@panel-box-primary-background, 3%);
+@panel-box-secondary-hover-background:          darken(@panel-box-secondary-background, 3%);
+
+@panel-box-border:                              @panel-box-background;
+@panel-box-primary-border:                      @panel-box-primary-background;
+@panel-box-secondary-border:                    @panel-box-secondary-background;
+
+@panel-header-border-size:                      80px;
+@panel-header-border-width:                     1px;
+
+//
+// Progress
+//
+
+@progress-bar-color:                            @contrast-color;
+
+//
+// Subnav
+//
+
+@subnav-font-family:                            @global-font-family;
+
+@subnav-pill-hover-background:                  @global-light-background;
+@subnav-pill-active-color:                      @contrast-color;
+@subnav-pill-onclick-color:                     @contrast-color;
+
+//
+// Tab
+//
+
+@tab-font-family:                               @global-font-family;
+
+@tab-hover-border:                              @global-primary-background;
+
+//
+// Table
+//
+
+@table-border:                                  #2f2f2f;
+
+//
+// Thumbnail
+//
+
+@thumbnail-border:                              @thumbnail-background;
+@thumbnail-hover-border:                        @global-border;
+@thumbnail-active-color:                        @contrast-color;
+
+//
+// Search
+//
+
+@nav-search-active-color:                       @contrast-color;
+
+//
+// Slidenav
+//
+
+@slidenav-color:                                fade(@global-contrast-color, 15%);
+@slidenav-hover-color:                          @global-contrast-color;
+@slidenav-active-color:                         fade(@global-contrast-color, 50%);
+
+
+// Theme variables
+// ========================================================================
+
+@theme-navbar-contrast-color:                   @global-contrast-color;
+@theme-panel-icon-border:                       lighten(@global-border, 8%);
+@theme-panel-icon-secondary-border:             @global-border;
+@theme-panel-icon-border-width:                 120px;
+@theme-panel-icon-border-height:                1px;
+@theme-subnav-border-height:                    1px;

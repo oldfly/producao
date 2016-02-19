@@ -1,0 +1,99 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Alert
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@alert-margin-vertical:                         @global-margin;
+@alert-padding:                                 10px;
+@alert-large-padding:                           (@alert-padding * 2);
+
+@alert-background:                              fade(@global-primary-background,5%);
+@alert-color:                                   @global-primary-color;
+
+@alert-success-background:                      fade(@global-success-background,5%);
+@alert-success-color:                           @global-success-color;
+
+@alert-warning-background:                      fade(@global-warning-background,5%);
+@alert-warning-color:                           @global-warning-color;
+
+@alert-danger-background:                       fade(@global-danger-background,5%);
+@alert-danger-color:                            @global-danger-color;
+
+//
+// New
+//
+
+@alert-border-width:                            @global-border-width;
+@alert-border-radius:                           @global-border-radius;
+
+@alert-border:                                  fade(@global-primary-background, 15%);
+@alert-success-border:                          fade(@global-success-background, 30%);
+@alert-warning-border:                          fade(@global-warning-background, 30%);
+@alert-danger-border:                           fade(@global-danger-background, 15%);
+
+
+// Component
+// ========================================================================
+
+.hook-alert() {
+
+    padding: @alert-padding (@alert-padding * 2);
+    border: @alert-border-width solid @alert-border;
+    border-radius: @alert-border-radius;
+
+    .uk-close { color: @alert-color; }
+
+}
+
+
+// Modifier: `uk-alert-success`
+// ========================================================================
+
+.hook-alert-success() {
+
+    border-color: @alert-success-border;
+
+    .uk-close { color: @alert-success-color; }
+
+}
+
+
+// Modifier: `uk-alert-warning`
+// ========================================================================
+
+.hook-alert-warning() {
+
+    border-color: @alert-warning-border;
+
+    .uk-close { color: @alert-warning-color; }
+
+}
+
+
+// Modifier: `uk-alert-danger`
+// ========================================================================
+
+.hook-alert-danger() {
+
+    border-color: @alert-danger-border;
+
+    .uk-close { color: @alert-danger-color; }
+
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-alert-misc() {
+
+    // Close
+    .uk-close { line-height: inherit; }
+
+}

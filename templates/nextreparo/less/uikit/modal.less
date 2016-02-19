@@ -1,0 +1,93 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Modal
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@modal-z-index:                                 @global-z-index + 10;
+@modal-background:                              fade(darken(@global-secondary-background, 6%), 60%);
+
+@modal-dialog-padding:                          30px;
+@modal-dialog-background:                       @global-background;
+
+@modal-header-margin-bottom:                    @global-margin;
+@modal-footer-margin-top:                       @global-margin;
+
+@modal-caption-color:                           @global-contrast-color;
+
+//
+// New
+//
+
+@modal-border-width:                            1px;
+@modal-border:                                  @global-border;
+@modal-header-background:                       darken(@modal-dialog-background, 2%);
+@modal-footer-background:                       @modal-header-background;
+
+
+// Component
+// ========================================================================
+
+.hook-modal() {}
+
+
+// Sub-object: `uk-modal-dialog`
+// ========================================================================
+
+.hook-modal-dialog() {
+    border-radius: @global-border-radius;
+    box-shadow: @global-hover-shadow;
+}
+
+
+// Modifier: `uk-modal-dialog-lightbox`
+// ========================================================================
+
+.hook-modal-dialog-lightbox() { border-radius: 0; }
+
+
+// Sub-object: `uk-modal-header`
+// ========================================================================
+
+.hook-modal-header() {
+    margin: (-@modal-dialog-padding) (-@modal-dialog-padding) @modal-header-margin-bottom (-@modal-dialog-padding);
+    padding: @modal-dialog-padding;
+    border-bottom: @modal-border-width solid @modal-border;
+    border-radius: @global-border-radius @global-border-radius 0 0;
+    background: @modal-header-background;
+}
+
+
+// Sub-object: `uk-modal-footer`
+// ========================================================================
+
+.hook-modal-footer() {
+    margin: @modal-footer-margin-top (-@modal-dialog-padding) (-@modal-dialog-padding) (-@modal-dialog-padding);
+    padding: @modal-dialog-padding;
+    border-top: @modal-border-width solid @modal-border;
+    border-radius: 0 0 @global-border-radius @global-border-radius;
+    background: @modal-header-background;
+}
+
+
+// Sub-object: `uk-modal-caption`
+// ========================================================================
+
+.hook-modal-caption() {}
+
+
+// Sub-object: `uk-modal-spinner`
+// ========================================================================
+
+.hook-modal-spinner() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-modal-misc() {}

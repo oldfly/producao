@@ -1,0 +1,87 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Dropdown
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@dropdown-z-index:                              (@global-z-index + 20);
+@dropdown-margin-top:                           @global-margin;
+@dropdown-width:                                200px;
+@dropdown-background:                           @global-light-background;
+@dropdown-color:                                @global-color;
+@dropdown-animation:                            uk-slide-bottom;
+
+@dropdown-divider-border:                       @global-border;
+@dropdown-divider-border-width:                 @global-border-width;
+
+@dropdown-navbar-margin:                        @global-grid-gutter-large;
+@dropdown-navbar-background:                    @global-background;
+@dropdown-navbar-color:                         @global-color;
+@dropdown-navbar-animation:                     uk-slide-bottom;
+
+//
+// New
+//
+
+@dropdown-border-radius:                        @global-border-radius;
+
+@dropdown-navbar-divider-border:                @dropdown-divider-border;
+
+@dropdown-navbar-panel-link-color:              @global-link-color;
+@dropdown-navbar-panel-link-hover-color:        @global-link-hover-color;
+
+@dropdown-shadow:                               0 1px 2px rgba(0,0,0,0.1);
+
+
+// Component
+// ========================================================================
+
+.hook-dropdown() {
+    border-radius: @dropdown-border-radius;
+    box-shadow: @dropdown-shadow;
+}
+
+
+// Modifier: `uk-dropdown-navbar`
+// ========================================================================
+
+.hook-dropdown-navbar() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-dropdown-misc() {
+
+    // Grid and panel in dropdown
+    // ==========================================================================
+
+    // uk-dropdown-navbar panel link color
+    .uk-dropdown-navbar {
+
+        .uk-panel {
+
+            > a:not([class]) {
+
+                color: @dropdown-navbar-panel-link-color;
+
+                &:hover { color: @dropdown-navbar-panel-link-hover-color; }
+
+            }
+
+        }
+
+    }
+
+    // Only tablets and desktops
+    @media (min-width: @breakpoint-medium) {
+
+        .uk-dropdown-navbar:not(.uk-dropdown-stack) > .uk-grid > [class*='uk-width-']:nth-child(n+2) { border-left-color: @dropdown-navbar-divider-border; }
+
+    }
+}

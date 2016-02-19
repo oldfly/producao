@@ -1,0 +1,327 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Nav
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@nav-padding-vertical:                          6px;
+@nav-padding-horizontal:                        @global-margin;
+
+@nav-header-padding-vertical:                   @nav-padding-vertical;
+@nav-header-padding-horizontal:                 @nav-padding-horizontal;
+@nav-header-font-size:                          13px;
+@nav-header-font-weight:                        @global-bold-font-weight;
+@nav-header-margin-top:                         @global-margin;
+
+@nav-divider-margin-horizontal:                 @nav-padding-horizontal;
+
+@nav-subtitle-font-size:                        12px;
+@nav-subtitle-line-height:                      18px;
+
+@nav-sub-padding-vertical:                      20px;
+@nav-sub-padding-left:                          @nav-padding-horizontal;
+
+@nav-parent-icon-width:                         @global-line-height;
+
+@nav-side-color:                                @global-color;
+@nav-side-hover-background:                     @global-light-background;
+@nav-side-hover-color:                          @global-color;
+@nav-side-active-background:                    @global-primary-background;
+@nav-side-active-color:                         @global-contrast-color;
+@nav-side-header-color:                         @global-muted-color;
+@nav-side-divider-border:                       @global-border;
+@nav-side-nested-color:                         @global-muted-color;
+@nav-side-nested-hover-color:                   @global-link-color;
+
+@nav-dropdown-color:                            @global-color;
+@nav-dropdown-hover-background:                 @global-primary-background;
+@nav-dropdown-hover-color:                      @global-contrast-color;
+@nav-dropdown-header-color:                     @global-muted-color;
+@nav-dropdown-divider-border:                   @global-border;
+@nav-dropdown-nested-color:                     @global-muted-color;
+@nav-dropdown-nested-hover-color:               @global-link-color;
+
+@nav-navbar-color:                              @global-color;
+@nav-navbar-hover-background:                   rgba(0,0,0,0);
+@nav-navbar-hover-color:                        @global-highlight-color;
+@nav-navbar-header-color:                       @global-muted-color;
+@nav-navbar-divider-border:                     @global-border;
+@nav-navbar-nested-color:                       @global-muted-color;
+@nav-navbar-nested-hover-color:                 @global-color;
+
+@nav-offcanvas-color:                           fade(@global-muted-color, 70%);
+@nav-offcanvas-hover-background:                lighten(@offcanvas-bar-background, 5%);
+@nav-offcanvas-hover-color:                     @global-contrast-color;
+@nav-offcanvas-active-background:               @global-primary-background;
+@nav-offcanvas-active-color:                    @global-contrast-color;
+@nav-offcanvas-header-color:                    fade(@global-muted-color, 30%);
+@nav-offcanvas-divider-border:                  lighten(@offcanvas-bar-background, 6%);
+@nav-offcanvas-nested-color:                    fade(@global-muted-color, 50%);
+@nav-offcanvas-nested-hover-color:              @global-muted-color;
+
+//
+// New
+//
+
+@nav-font-family:                               @global-font-family;
+
+@nav-margin:                                    2px;
+
+@nav-nested-font-size:                          13px;
+
+@nav-sub-font-size:                             12px;
+
+@nav-parent-icon-size:                          12px;
+
+@nav-side-font-size:                            14px;
+@nav-side-text-transform:                       @global-text-transform;
+@nav-side-letter-spacing:                       @global-letter-spacing;
+@nav-side-onclick-background:                   @global-primary-background;
+@nav-side-onclick-color:                        @global-contrast-color;
+
+@nav-dropdown-font-size:                        14px;
+@nav-dropdown-text-transform:                   @global-text-transform;
+@nav-dropdown-letter-spacing:                   @global-letter-spacing;
+@nav-dropdown-active-background:                rgba(0,0,0,0);
+@nav-dropdown-active-color:                     @global-primary-color;
+
+@nav-navbar-font-size:                          14px;
+@nav-navbar-text-transform:                     @global-text-transform;
+@nav-navbar-letter-spacing:                     @global-letter-spacing;
+@nav-navbar-active-background:                  rgba(0,0,0,0);
+@nav-navbar-active-color:                       @global-primary-color;
+
+@nav-offcanvas-margin:                          2px;
+@nav-offcanvas-background:                      lighten(@offcanvas-bar-background, 2%);
+@nav-offcanvas-font-size:                       14px;
+@nav-offcanvas-text-transform:                  @global-text-transform;
+@nav-offcanvas-letter-spacing:                  @global-letter-spacing;
+
+
+// Sub-object: `uk-nav-header`
+// ========================================================================
+
+.hook-nav-header() {}
+
+
+// Sub-object: `uk-nav-divider`
+// ========================================================================
+
+.hook-nav-divider() {}
+
+
+// Sub-object: `uk-nav-sub`
+// ========================================================================
+
+.hook-nav-sub() {
+    font-size: @nav-sub-font-size;
+    text-transform: @global-text-transform;
+    letter-spacing: @global-letter-spacing;
+}
+
+
+// Modifier: `uk-nav-parent-icon`
+// ========================================================================
+
+.hook-nav-parent-icon() { font-size: @nav-parent-icon-size; }
+
+
+// Modifier `uk-nav-side`
+// ========================================================================
+
+//
+// Items
+//
+
+.hook-nav-side() {
+    margin-bottom: @nav-margin;
+    border-radius: @global-border-radius;
+    font-family: @nav-font-family;
+    font-size: @nav-side-font-size;
+    text-transform: @nav-side-text-transform;
+    letter-spacing: @nav-side-letter-spacing;
+    -webkit-transition: @global-transition;
+    transition: @global-transition;
+}
+
+// Hover
+.hook-nav-side-hover() {}
+
+// Active
+.hook-nav-side-active() {}
+
+//
+// Sub-object: `uk-nav-header`
+//
+
+.hook-nav-side-header() {}
+
+//
+// Sub-object: `uk-nav-divider`
+//
+
+.hook-nav-side-divider() {}
+
+
+// Modifier `uk-nav-dropdown`
+// ========================================================================
+
+//
+// Items
+//
+
+.hook-nav-dropdown() {
+    font-family: @nav-font-family;
+    font-size: @nav-dropdown-font-size;
+    text-transform: @nav-dropdown-text-transform;
+    letter-spacing: @nav-dropdown-letter-spacing;
+}
+
+// Hover
+.hook-nav-dropdown-hover() {}
+
+//
+// Sub-object: `uk-nav-header`
+//
+
+.hook-nav-dropdown-header() {}
+
+//
+// Sub-object: `uk-nav-divider`
+//
+
+.hook-nav-dropdown-divider() {}
+
+
+// Modifier `uk-nav-navbar`
+// ========================================================================
+
+//
+// Items
+//
+
+.hook-nav-navbar() {
+    font-family: @nav-font-family;
+    font-size: @nav-dropdown-font-size;
+    text-transform: @nav-dropdown-text-transform;
+    letter-spacing: @nav-dropdown-letter-spacing;
+    -webkit-transform: translate3d(0,0,0); // Safari flickering fix
+}
+
+// Hover
+.hook-nav-navbar-hover() {}
+
+//
+// Sub-object: `uk-nav-header`
+//
+
+.hook-nav-navbar-header() {}
+
+//
+// Sub-object: `uk-nav-divider`
+//
+
+.hook-nav-navbar-divider() {}
+
+
+// Modifier `uk-nav-offcanvas`
+// ========================================================================
+
+.hook-nav-offcanvas-link() {}
+
+.hook-nav-offcanvas-link-hover() {}
+
+//
+// Items
+//
+
+.hook-nav-offcanvas() {
+    margin-bottom: @nav-offcanvas-margin;
+    background-color: @nav-offcanvas-background;
+    font-family: @nav-font-family;
+    font-size: @nav-offcanvas-font-size;
+    text-transform: @nav-offcanvas-text-transform;
+    letter-spacing: @nav-offcanvas-letter-spacing;
+    -webkit-transition: @global-transition;
+    transition: @global-transition;
+}
+
+// Hover
+.hook-nav-offcanvas-hover() {}
+
+// Active
+.hook-nav-offcanvas-active() {}
+
+//
+// Sub-object: `uk-nav-header`
+//
+
+.hook-nav-offcanvas-header() {}
+
+//
+// Sub-object: `uk-nav-divider`
+//
+
+.hook-nav-offcanvas-divider() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-nav-misc() {
+
+    // onlick event
+    .uk-nav-side > li > a:active {
+        background: @nav-side-onclick-background;
+        color: @nav-side-onclick-color;
+        -webkit-animation: @global-blur-animation;
+        animation: @global-blur-animation;
+    }
+
+    // removing border-radius in panel-box
+    [class*='uk-panel-box'] {
+
+        .uk-nav-side > li {
+
+            margin: auto -@panel-box-border-width;
+
+            > a { border-radius: 0; }
+
+        }
+
+    }
+
+    // uk-dropdown-navbar active
+    .uk-dropdown-navbar .uk-nav-navbar > li.uk-active > a {
+        background: @nav-navbar-active-background;
+        color: @nav-navbar-active-color;
+    }
+
+    // uk-dropdown active
+    .uk-nav-dropdown > li.uk-active > a {
+        background: @nav-dropdown-active-background;
+        color: @nav-dropdown-active-color;
+
+    }
+
+    // Onclick event for Offcanvas nav
+    .uk-nav-offcanvas > li > a:active {
+        background: @nav-offcanvas-active-background !important;
+        color: @nav-offcanvas-active-color !important;
+        -webkit-animation: @global-blur-animation;
+        animation: @global-blur-animation;
+    }
+
+    // Nested item font size
+    .uk-nav-dropdown > li > a,
+    .uk-nav-navbar > li > a {
+        padding: (@nav-padding-vertical / 2) @nav-padding-horizontal;
+        font-size: @nav-nested-font-size;
+    }
+
+}

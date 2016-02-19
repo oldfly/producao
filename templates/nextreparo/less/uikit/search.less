@@ -1,0 +1,155 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Search
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@search-width:                                  @global-height-large;
+@search-focus-width:                            300px;
+@search-height:                                 @search-width;
+@search-padding:                                10px;
+
+@search-border:                                 rgba(0,0,0,0);
+@search-border-width:                           @global-border-width;
+@search-background:                             rgba(0,0,0,0);
+@search-color:                                  @global-highlight-color;
+@search-placeholder-color:                      @global-muted-color;
+
+@dropdown-search-color:                         @global-color;
+@dropdown-search-navbar-margin-top:             5px;
+@dropdown-search-navbar-margin-right:           -15px;
+
+@search-icon-size:                              20px;
+@search-icon-color:                             @global-highlight-color;
+
+// Dropdown modifier
+@dropdown-search-width:                         300px;
+@dropdown-search-margin-top:                    0;
+@dropdown-search-background:                    @global-background;
+@dropdown-search-color:                         @global-color;
+@dropdown-search-animation:                     uk-slide-top-fixed;
+@dropdown-search-navbar-margin-top:             5px;
+@dropdown-search-navbar-margin-right:           -15px;
+
+// Nav modifier
+@nav-search-color:                              @global-color;
+@nav-search-active-background:                  @global-primary-background;
+@nav-search-active-color:                       @global-contrast-color;
+@nav-search-header-color:                       @global-muted-color;
+@nav-search-divider-border:                     @global-border;
+@nav-search-nested-color:                       @global-link-color;
+@nav-search-nested-hover-color:                 @global-link-hover-color;
+
+// Search in offcanvas
+@offcanvas-search-margin:                       5px;
+@offcanvas-search-background:                   rgba(0,0,0,0);
+@offcanvas-search-border:                       rgba(255,255,255,0.1);
+@offcanvas-search-color:                        @offcanvas-panel-color;
+@offcanvas-search-placeholder-color:            fade(@offcanvas-panel-color, 50%);
+@offcanvas-search-icon-color:                   fade(@offcanvas-panel-color, 50%);
+
+//
+// New
+//
+
+@search-border-radius:                          @global-border-radius;
+@search-indent:                                 (@search-width - @search-padding);
+
+@offcanvas-search-border-radius:                @global-border-radius;
+@offcanvas-search-focus-border:                 @global-primary-background;
+
+
+// Component
+// ========================================================================
+
+.hook-search() { z-index: 2; }
+
+.hook-search-icon() {
+    top: 1px;
+    left: 15px;
+    z-index: 2;
+}
+
+
+// Sub-object `uk-search-field`
+// ========================================================================
+
+.hook-search-field() {
+    position: relative;
+    border-radius: @search-border-radius;
+    z-index: 3;
+    text-indent: @search-indent;
+    cursor: pointer;
+}
+
+.hook-search-field-focus() { cursor: text; }
+
+
+// Dropdown modifier: `uk-dropdown-search`
+// ========================================================================
+
+.hook-dropdown-search() {}
+
+
+// Nav modifier `uk-nav-search`
+// ========================================================================
+
+//
+// Items
+//
+
+.hook-nav-search() {}
+
+// Active
+.hook-nav-search-active() {}
+
+//
+// Sub-object: `uk-nav-header`
+//
+
+.hook-nav-search-header() {}
+
+//
+// Sub-object: `uk-nav-divider`
+//
+
+.hook-nav-search-divider() {}
+
+
+// Search in offcanvas
+// ========================================================================
+
+.hook-offcanvas-search-field() {
+
+    border-radius: @offcanvas-search-border-radius;
+
+    &:focus { border-color: @offcanvas-search-focus-border; }
+
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-search-misc() {
+
+    // Search icon in offcanvas
+    .uk-offcanvas {
+
+        .uk-search {
+
+            &::before {
+                left: 15px;
+                font-size: 16px;
+            }
+
+        }
+
+    }
+
+}

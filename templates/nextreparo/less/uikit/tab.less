@@ -1,0 +1,184 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Tab
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@tab-padding-horizontal:                        16px;
+@tab-padding-vertical:                          12px;
+@tab-padding-top:                               @tab-padding-vertical;
+@tab-padding-bottom:                            @tab-padding-vertical;
+@tab-margin-horizontal:                         5px;
+@tab-margin-vertical:                           5px;
+
+@tab-border-width:                              1px;
+
+@tab-border:                                    @global-border;
+@tab-color:                                     @global-color;
+@tab-hover-border:                              @global-secondary-background;
+@tab-hover-background:                          rgba(0,0,0,0);
+@tab-hover-color:                               @global-highlight-color;
+@tab-active-border:                             @global-primary-background;
+@tab-active-background:                         rgba(0,0,0,0);
+@tab-active-color:                              @global-link-color;
+@tab-disabled-color:                            @global-muted-color;
+
+//
+// New
+//
+
+@tab-font-family:                               @global-font-family;
+@tab-font-size:                                 13px;
+@tab-text-transform:                            @global-text-transform;
+@tab-letter-spacing:                            @global-letter-spacing;
+
+
+// Component
+// ========================================================================
+
+//
+// Items
+//
+
+.hook-tab() {
+
+    position: relative;
+    border: none;
+    font-family: @tab-font-family;
+    font-size: @tab-font-size;
+    text-transform: @tab-text-transform;
+    letter-spacing: @tab-letter-spacing;
+    -webkit-transition: @global-transition;
+    transition: @global-transition;
+
+    &::after {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: '';
+        border-bottom: @tab-border-width solid @tab-hover-border;
+        opacity: 0;
+        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+        transition: opacity 0.35s, transform 0.35s;
+        webkit-transform: scale(0,1);
+        transform: scale(0,1);
+    }
+
+}
+
+// Hover
+.hook-tab-hover() {
+
+    &::after {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+}
+
+// Active
+.hook-tab-active() {
+
+    &::after {
+        border-width: (@tab-border-width * 2);
+        border-color: @tab-active-border;
+        opacity: 1;
+        -webkit-transition: border-width 0.2s, -webkit-transform 0.35s;
+        transition: border-width 0.2s, transform 0.35s;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+}
+
+// Disabled
+.hook-tab-disabled() {
+
+    &::after { opacity: 0; }
+
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-tab-misc() {
+
+    // Onclick event
+    .uk-tab > li > a:active {
+
+        color: @tab-active-color;
+
+        &::after {
+            border-color: @tab-active-border;
+            opacity: 1;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+
+    }
+
+    // Modifier: 'tab-bottom'
+    .uk-tab-bottom > li > a {
+
+        &::after {
+            top: 0;
+            bottom: auto;
+        }
+
+    }
+
+    // Reseting border width
+    .uk-tab > li:not(.uk-active) > a:hover,
+    .uk-tab > li:not(.uk-active) > a:focus,
+    .uk-tab > li.uk-open:not(.uk-active) > a {
+        margin-bottom: 0;
+        padding-bottom: @tab-padding-bottom;
+    }
+
+    .uk-tab-bottom > li:not(.uk-active) > a:hover,
+    .uk-tab-bottom > li:not(.uk-active) > a:focus,
+    .uk-tab-bottom > li.uk-open:not(.uk-active) > a {
+        margin-top: 0;
+        padding-top: @tab-padding-bottom;
+    }
+
+    // Modifier: 'tab-left', 'tab-right'
+    .uk-tab-left > li > a::after,
+    .uk-tab-right > li > a::after {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: auto;
+        border-right: @tab-border-width solid @tab-hover-border;
+        border-bottom: 0;
+        webkit-transform: scale(1,0);
+        transform: scale(1,0);
+    }
+
+    .uk-tab-right > li > a::after {
+        right: auto;
+        left: 0;
+    }
+
+    // Reseting border width
+    .uk-tab-left > li:not(.uk-active) > a:hover,
+    .uk-tab-left > li:not(.uk-active) > a:focus {
+        margin-right: 0;
+        padding-right: @tab-padding-horizontal;
+    }
+
+    .uk-tab-right > li:not(.uk-active) > a:hover,
+    .uk-tab-right > li:not(.uk-active) > a:focus {
+        margin-left: 0;
+        padding-left: @tab-padding-horizontal;
+    }
+
+}

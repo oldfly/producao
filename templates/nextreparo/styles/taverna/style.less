@@ -1,0 +1,170 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+@import 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700';
+
+
+// Global variables
+// ========================================================================
+
+//
+// Text
+//
+
+@global-color:                                  #666;
+@global-muted-color:                            #aaa;
+@global-highlight-color:                        #222;
+
+@global-link-color:                             #7eb561;
+@global-link-hover-color:                       darken(@global-link-color, 20%);
+
+@global-primary-color:                          @global-link-color;
+@global-primary-link-color:                     #f2ffa8;
+@global-primary-link-hover-color:               fade(@global-primary-link-color, 70%);
+
+@global-secondary-color:                        fade(@global-secondary-highlight-color, 40%);
+@global-secondary-highlight-color:              #ddd;
+@global-secondary-inverted-color:               darken(@global-secondary-background, 4%);
+
+@global-contrast-color:                         #fff;
+
+@global-success-color:                          #50b36e;
+@global-warning-color:                          #ff893a;
+@global-danger-color:                           #f12f2b;
+
+//
+// Typography
+//
+
+@global-font-family:                            'Roboto Slab', Helvetica, Arial, sans-serif;
+@global-alternate-font-family:                  'Roboto Slab', Helvetica, Arial, sans-serif;
+
+@global-bold-font-weight:                       700;
+@global-text-transform:                         uppercase;
+@global-letter-spacing:                         0;
+
+//
+// Backgrounds & Borders
+//
+
+@global-background:                             #fff;
+@global-light-background:                       #f9f9f9;
+@global-dark-background:                        #f0f0f0;
+@global-secondary-background:                   #222;
+
+@global-default-background:                     @global-secondary-background;
+@global-default-hover-background:               lighten(@global-default-background, 8%);
+@global-default-active-background:              darken(@global-default-hover-background, 2%);
+@global-default-active-shadow:                  fade(darken(@global-default-active-background, 10%), 40%);
+
+@global-primary-background:                     #7eb561;
+@global-primary-hover-background:               desaturate(darken(@global-primary-background, 3%), 7%);
+@global-primary-active-background:              desaturate(darken(@global-primary-background, 7%), 5%);
+@global-primary-active-shadow:                  fade(desaturate(darken(@global-primary-active-background, 30%), 10%), 15%);
+
+@global-success-background:                     #50b36e;
+@global-success-hover-background:               desaturate(darken(@global-success-background, 3%), 7%);
+@global-success-active-background:              desaturate(darken(@global-success-background, 7%), 5%);
+@global-success-active-shadow:                  fade(desaturate(darken(@global-success-active-background, 20%), 10%), 15%);
+
+@global-warning-background:                     #ff893a;
+@global-warning-hover-background:               desaturate(darken(@global-warning-background, 3%), 5%);
+@global-warning-active-background:              desaturate(darken(@global-warning-background, 12%), 8%);
+@global-warning-active-shadow:                  fade(desaturate(darken(@global-warning-active-background, 20%), 15%), 20%);
+
+@global-danger-background:                      #f12f2b;
+@global-danger-hover-background:                desaturate(darken(@global-danger-background, 5%), 5%);
+@global-danger-active-background:               desaturate(darken(@global-danger-background, 8%), 8%);
+@global-danger-active-shadow:                   fade(desaturate(darken(@global-danger-active-background, 10%), 15%), 40%);
+
+@global-hover-shadow:                           0 2px 8px rgba(0,0,0,0.04);
+
+@global-border:                                 #e9e9e9;
+@global-border-width:                           1px;
+@global-border-radius:                          0;
+
+//
+// Misc
+//
+
+@global-style:                                  'taverna';
+
+
+// Component variables
+// ========================================================================
+
+//
+// Base
+//
+
+@base-body-font-family:                         @global-font-family;
+@base-heading-font-family:                      @global-font-family;
+@base-alternate-heading-font-family:            @global-font-family;
+
+//
+// Badge
+//
+
+@badge-border-width:                            1px;
+@badge-background:                              rgba(0,0,0,0);
+@badge-success-background:                      rgba(0,0,0,0);
+@badge-warning-background:                      rgba(0,0,0,0);
+@badge-danger-background:                       rgba(0,0,0,0);
+@badge-color:                                   @global-primary-color;
+@badge-hover-color:                             @global-primary-color;
+@badge-success-color:                           @global-success-color;
+@badge-warning-color:                           @global-warning-color;
+@badge-danger-color:                            @global-danger-color;
+
+@badge-font-family:                             @global-font-family;
+@badge-font-size:                               14px;
+@badge-line-height:                             26px;
+
+//
+// Block
+//
+
+@block-secondary-badge-background:              @badge-background;
+@block-secondary-badge-color:                   @global-secondary-color;
+
+//
+// Button
+//
+
+@button-font-family:                            @global-font-family;
+
+//
+// Contrast
+//
+
+@contrast-badge-background:                     @badge-background;
+@contrast-badge-color:                          @contrast-color;
+
+//
+// Dropdown
+//
+
+@dropdown-shadow:                               @global-hover-shadow;
+
+//
+// Nav
+//
+
+@nav-font-family:                               @global-font-family;
+
+//
+// Navbar
+//
+
+@navbar-nav-font-family:                        @global-font-family;
+
+//
+// Subnav
+//
+
+@subnav-font-family:                            @global-font-family;
+
+//
+// Tab
+//
+
+@tab-font-family:                               @global-font-family;

@@ -1,0 +1,141 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Variables
+//
+// ========================================================================
+
+
+// Global variables
+// ========================================================================
+
+//
+// Text
+//
+
+@global-color:                                  #687480;
+@global-muted-color:                            #a3a9b0;
+@global-highlight-color:                        #13202e;
+
+@global-link-color:                             #d85349;
+@global-link-hover-color:                       darken(@global-link-color, 20%);
+
+@global-contrast-color:                         #fff;
+
+@global-primary-color:                          @global-link-color;
+@global-primary-link-color:                     #ffeeac;
+@global-primary-link-hover-color:               fade(@global-primary-link-color, 70%);
+
+@global-secondary-color:                        fade(@global-secondary-highlight-color, 50%);
+@global-secondary-highlight-color:              #c7d5e3;
+@global-secondary-inverted-color:               darken(@global-secondary-background, 4%);
+
+@global-success-color:                          #84b84d;
+@global-warning-color:                          #f2a333;
+@global-danger-color:                           #df3441;
+
+//
+// Typography
+//
+
+@global-font-family:                            'Roboto', Helvetica, Arial, sans-serif;
+@global-alternate-font-family:                  'Architects Daughter', Helvetica, Arial, sans-serif;
+
+@global-font-size:                              16px;
+@global-line-height:                            24px;
+@global-font-weight:                            300;
+@global-bold-font-weight:                       400;
+@global-text-transform:                         uppercase;
+@global-letter-spacing:                         1px;
+@global-h1-font-size:                           54px;
+@global-h1-line-height:                         58px;
+@global-h3-font-size:                           24px;
+@global-h3-line-height:                         28px;
+@global-heading-font-weight:                    300;
+@global-heading-text-transform:                 none;
+
+//
+// Backgrounds & Borders
+//
+
+@global-background:                             #fff;
+@global-light-background:                       #f5f6fa;
+@global-dark-background:                        #eaecf1;
+@global-secondary-background:                   #13202e;
+
+@global-default-background:                     @global-secondary-background;
+@global-default-hover-background:               desaturate(lighten(@global-default-background, 8%), 25%);
+@global-default-active-background:              darken(@global-default-hover-background, 2%);
+@global-default-active-shadow:                  fade(desaturate(darken(@global-default-active-background, 10%), 8%), 40%);
+
+@global-primary-background:                     #d85349;
+@global-primary-hover-background:               desaturate(darken(@global-primary-background, 5%), 10%);
+@global-primary-active-background:              desaturate(darken(@global-primary-background, 8%), 8%);
+@global-primary-active-shadow:                  fade(desaturate(darken(@global-primary-active-background, 30%), 15%), 20%);
+
+@global-success-background:                     #85c958;
+@global-success-hover-background:               desaturate(darken(@global-success-background, 5%), 5%);
+@global-success-active-background:              desaturate(darken(@global-success-background, 8%), 5%);
+@global-success-active-shadow:                  fade(desaturate(darken(@global-success-active-background, 20%), 10%), 20%);
+
+@global-warning-background:                     #f5b558;
+@global-warning-hover-background:               desaturate(darken(@global-warning-background, 3%), 5%);
+@global-warning-active-background:              desaturate(darken(@global-warning-background, 12%), 8%);
+@global-warning-active-shadow:                  fade(desaturate(darken(@global-warning-active-background, 20%), 15%), 20%);
+
+@global-danger-background:                      #df4958;
+@global-danger-hover-background:                desaturate(darken(@global-danger-background, 5%), 5%);
+@global-danger-active-background:               desaturate(darken(@global-danger-background, 8%), 8%);
+@global-danger-active-shadow:                   fade(desaturate(darken(@global-danger-active-background, 10%), 15%), 40%);
+
+@global-shadow:                                 0 0 0 rgba(0,0,0,0);
+@global-hover-shadow:                           0 0 0 rgba(0,0,0,0);
+
+@global-border:                                 #ededf0;
+@global-border-width:                           1px;
+@global-border-radius:                          3px;
+
+//
+// Spacings
+//
+
+@global-margin:                                 25px;
+@global-margin-large:                           40px;
+@global-margin-extra-large:                     60px;
+@global-margin-small:                           15px;
+@global-grid-gutter:                            25px;
+@global-grid-gutter-large:                      40px;
+@global-grid-gutter-small:                      15px;
+
+//
+// Controls
+//
+
+@global-height:                                 40px;
+@global-height-mini:                            25px;
+@global-height-small:                           35px;
+@global-height-large:                           50px;
+
+//
+// Z-index
+//
+
+@global-z-index:                                1000;
+
+//
+// Animations
+//
+
+@global-transition:                             all 0.15s ease-in-out;
+@global-transform:                              scale(0.8);
+@global-hover-transform:                        scale(0.9);
+@global-active-transform:                       scale(1);
+
+@global-ripple-animation:                       uk-ripple 0.5s ease-out forwards;
+@global-blur-animation:                         uk-blur 0.18s ease-out forwards;
+
+//
+// Misc
+//
+
+@global-style:                                  'default';

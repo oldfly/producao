@@ -1,0 +1,77 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Close
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@close-size:                                    24px;
+@close-alt-padding:                             0;
+
+@close-alt-background:                          @global-light-background;
+
+//
+// New
+//
+
+@close-icon-size:                               13px;
+@close-color:                                   @global-highlight-color;
+@close-alt-icon-size:                           13px;
+@close-alt-hover-background:                    desaturate(darken(@close-alt-background, 5%), 10%);
+@close-alt-color:                               @global-highlight-color;
+
+
+// Component
+// ========================================================================
+
+.hook-close() {
+    color: @close-color;
+    -webkit-transition: opacity 0.1s linear;
+    transition: opacity 0.1s linear;
+}
+
+
+// Modifier: `uk-close-alt`
+// ========================================================================
+
+.hook-close-alt() {
+
+    color: @close-alt-color;
+    opacity: 1 !important;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: opacity 0.15s, -webkit-transform 0.08s;
+    transition: opacity 0.15s, transform 0.08s;
+
+    &:hover {
+        background: @close-alt-hover-background;
+        color: @close-alt-color;
+        opacity: 1.0 !important;
+    }
+
+    &:active {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    &:active,
+    &:focus { color: @close-alt-color; }
+
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-close-misc() {
+
+    // Icon sizes
+    .uk-close::after { font-size: @close-icon-size; }
+
+    .uk-close-alt::after { font-size: @close-alt-icon-size; }
+
+}
