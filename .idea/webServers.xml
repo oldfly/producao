@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="013b150b-9d4a-42a4-8ddd-0bb2d5ce07d8" name="aaa" url="http://localhost">
+        <fileTransfer mountedRoot="C:\Users\Zhang\Documents\GitHub\projeto\producao" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
